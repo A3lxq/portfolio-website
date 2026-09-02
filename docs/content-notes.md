@@ -23,9 +23,13 @@ Working notes reconciling the three source-of-truth conflicts found between the 
 - **LinkedIn headline**: "IT Support Specialist | Network & Systems Administrator | AI Automation & Web Development | Client-Focused Problem Solver"
 - **LinkedIn top skills**: Claude Skills, User Interface Design, Front-End Development.
 
+## Resolved (continued)
+
+- **Narrative**: blended timeline confirmed — DataMine (2019–21) → Vianet (2020–22) → Wipro → current independent cybersecurity/AI research chapter (AegisX etc.), presented as a real progression, not an unexplained pivot.
+
 ## Still open
 
-- Narrative framing decision needs revisiting given the above (see conversation — flagged to user).
+- Exact Wipro title/dates reconciliation (old site says "Assistant Project Lead – IT, 2023–2025" — needs confirming against LinkedIn's summary, which doesn't give exact dates/title).
 - AegisX / Aegis-Trade / CavendeX / RAG project details+links — not on LinkedIn or resume, GitHub-profile only, need real details from user.
 - Profile photo: original file or authorization to re-download the ibb.co-hosted one.
 - Formspree endpoint (pending user signup).
