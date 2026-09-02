@@ -8,10 +8,15 @@ import { Projects } from './components/sections/Projects'
 import { Certifications } from './components/sections/Certifications'
 import { Education } from './components/sections/Education'
 import { Contact } from './components/sections/Contact'
+import { FalconHero } from './components/hero/FalconHero'
+import { useSmoothScroll } from './hooks/useSmoothScroll'
 
 function App() {
+  useSmoothScroll()
+
   return (
     <div className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+      <FalconHero />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-white"

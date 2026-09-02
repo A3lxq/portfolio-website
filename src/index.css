@@ -14,3 +14,12 @@
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes falcon-pulse {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
+.falcon-fallback-pulse {
+  animation: falcon-pulse 3.4s ease-in-out infinite;
+}
