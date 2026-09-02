@@ -21,7 +21,7 @@ export function Hero() {
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <a
-          href={profile.resumeUrl}
+          href={`${import.meta.env.BASE_URL}${profile.resumeUrl.replace(/^\//, '')}`}
           className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
           download
         >

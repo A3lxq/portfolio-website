@@ -74,7 +74,7 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    title: 'Computer System Technician',
+    title: 'Computer System Technician (part-time)',
     org: 'Vianet Communication',
     period: '2020 — 2022',
     bullets: [
@@ -109,8 +109,8 @@ export const projects: ProjectEntry[] = [
   {
     name: 'Portfolio Website',
     description:
-      'This site — rebuilt from a single static HTML page into a Vite + React + TypeScript build with a Three.js hero scene, real content, and an accessible, fast-loading, mobile-first layout.',
-    tags: ['React', 'TypeScript', 'Three.js'],
+      'This site — rebuilt from a single static HTML page into a Vite + React + TypeScript build with real content and an accessible, fast-loading, mobile-first layout. A Three.js hero scene is planned for a later iteration.',
+    tags: ['React', 'TypeScript'],
   },
 ]
 
