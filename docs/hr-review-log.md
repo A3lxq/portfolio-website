@@ -46,3 +46,23 @@ All three previously flagged blockers are genuinely fixed, not just cosmetically
 - Dead résumé download link: FIXED — link now resolves to `/portfolio-website/Immanuvel-Alex-Resume-2026.pdf`, fetched live and returned HTTP 200, `application/pdf`, ~61KB.
 - No mobile navigation: FIXED — 390px viewport shows a hamburger button labeled "Open menu"; clicking it reveals a full link list (About/Skills/Experience/Projects/Certifications/Education/Contact) and clicking "Experience" scrolled the page to that section and closed the menu.
 - Overlapping employment dates with no explanation: FIXED — Vianet Communication is now explicitly labeled "Computer System Technician (part-time) · 2020 — 2022," visibly explaining the overlap with DataMine's "2019 — 2021" full role instead of leaving two unexplained contradictory ranges.
+
+## HR Review — Iteration 2 — 2026-09-02
+
+1. Wow factor: 7/10 — Clean minimalist layout with a particle hero that resolves into a falcon shape in ~2s, competent but a safe/familiar template look rather than a standout.
+2. Findability: 9/10 — Name, title, location, and four CTAs are all fully legible in the very first frame at 800ms, and the 3D scene never sits between you and the content.
+3. Credibility: 5/10 — The Projects section text literally says "A Three.js hero scene is planned for a later iteration" while a fully working Three.js particle scene (FalconScene.js) is already running on the same page — a self-contradicting, stale claim on the live site.
+4. Mobile: 9/10 — Layout reflows cleanly, canvas is swapped for a lightweight static SVG outline, no overlap, no broken elements, full content readable.
+5. Honesty: 7/10 — The contact form is honestly labeled as a mailto handoff ("Opening your email client to send this — thank you!") rather than faking a backend, but the stale "planned for later" copy elsewhere undercuts trust in the site's own self-description.
+6. Accessibility: 8/10 — Visible focus outlines on every tab stop, working skip link, single h1 with proper h2 sectioning, labeled inputs with aria-live status, and the hero fully honors prefers-reduced-motion (zero canvas rendered, static line-art shown instead).
+7. Performance: 8/10 — DOMContentLoaded in ~0.7s, the 3D scene is code-split into its own lazy chunk so it never blocks real content, only console output is a THREE.Clock deprecation notice and benign GPU perf warnings, no errors.
+8. Polish vs. aspirational ceiling: 7/10 — Above the average solo bootcamp portfolio thanks to the code-split, gracefully-degrading 3D easter egg and consistent design system, but content is still generic card/list layout with no real interactivity beyond the hero.
+
+**Overall (weighted): 7/10**
+
+This is a technically competent, fast, accessible site that doesn't let its 3D toy get in the way of the resume content — which is what most recruiters actually want. But finding a factual self-contradiction (claiming the hero scene is "planned for later" when it's already shipped and running) in under ten minutes of review is a real credibility scuff on a candidate whose pitch is "AI automation and attention to detail" — I'd still take a second look because the underlying experience and skills read as genuine, but I'd flag the copy inconsistency internally as a small process/QA red flag.
+
+**Top 3 fixes before the next iteration:**
+1. Update or remove the "A Three.js hero scene is planned for a later iteration" line in the Portfolio Website project card — it's already shipped, so the current copy makes the site look unmaintained/inattentive to detail.
+2. Give the contact form a fallback for users without a configured desktop mail client (e.g., a mailto link plus a copy-to-clipboard button, or a real form backend like Formspree) since mailto silently does nothing in many corporate/Chromebook environments.
+3. Add a project link or repo for AegisX (the flagship project mentioned in About/Experience) since it's currently talked about but not shown anywhere in the Projects section, which reads as unverifiable.

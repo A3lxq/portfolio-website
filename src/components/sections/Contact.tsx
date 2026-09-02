@@ -10,6 +10,17 @@ export function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
   )
+  const [copied, setCopied] = useState(false)
+
+  async function handleCopyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // Clipboard API unavailable — the email is still selectable/visible text.
+    }
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -101,19 +112,26 @@ export function Contact() {
             {status === 'sent' &&
               (FORMSPREE_ENDPOINT
                 ? 'Message sent — thank you!'
-                : 'Opening your email client to send this — thank you!')}
+                : "Opening your email client — if nothing happens, copy the email address alongside and send it directly.")}
             {status === 'error' &&
               'Something went wrong — please email directly instead.'}
           </p>
         </form>
         <div className="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-          <p>
+          <p className="flex flex-wrap items-center gap-2">
             <a
               href={`mailto:${profile.email}`}
               className="underline underline-offset-2"
             >
               {profile.email}
             </a>
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              className="rounded-md border border-neutral-300 px-2 py-0.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-900"
+            >
+              {copied ? 'Copied!' : 'Copy'}
+            </button>
           </p>
           <p>{profile.phone}</p>
           <p>{profile.location}</p>

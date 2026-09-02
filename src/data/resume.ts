@@ -109,8 +109,8 @@ export const projects: ProjectEntry[] = [
   {
     name: 'Portfolio Website',
     description:
-      'This site — rebuilt from a single static HTML page into a Vite + React + TypeScript build with real content and an accessible, fast-loading, mobile-first layout. A Three.js hero scene is planned for a later iteration.',
-    tags: ['React', 'TypeScript'],
+      'This site — rebuilt from a single static HTML page into a Vite + React + TypeScript build with real content, an accessible mobile-first layout, and a Three.js hero scene that degrades gracefully on low-power devices and under reduced-motion.',
+    tags: ['React', 'TypeScript', 'Three.js'],
   },
 ]
 
