@@ -1,12 +1,36 @@
+import { Nav } from './components/layout/Nav'
+import { Footer } from './components/layout/Footer'
+import { Hero } from './components/sections/Hero'
+import { About } from './components/sections/About'
+import { Skills } from './components/sections/Skills'
+import { Experience } from './components/sections/Experience'
+import { Projects } from './components/sections/Projects'
+import { Certifications } from './components/sections/Certifications'
+import { Education } from './components/sections/Education'
+import { Contact } from './components/sections/Contact'
+
 function App() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-neutral-950 text-neutral-100 px-6 text-center">
-      <h1 className="text-4xl font-semibold tracking-tight">Immanuvel Alex</h1>
-      <p className="mt-3 text-neutral-400 max-w-md">
-        Portfolio rebuild in progress — pipeline scaffold deployed, content and
-        the falcon hero scene land in the next iterations.
-      </p>
-    </main>
+    <div className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-neutral-900 focus:px-4 focus:py-2 focus:text-white"
+      >
+        Skip to content
+      </a>
+      <Nav />
+      <main id="main">
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
 
