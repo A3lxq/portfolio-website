@@ -1,0 +1,55 @@
+@import '@fontsource/sora/400.css';
+@import '@fontsource/sora/500.css';
+@import '@fontsource/sora/600.css';
+@import '@fontsource/sora/700.css';
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+
+.cs-root {
+  --cs-bg: #f4f3f9;
+  --cs-ink: #14121f;
+  --cs-ink-soft: #5b5770;
+  --cs-accent: #5842e0;
+  --cs-accent-soft: rgba(88, 66, 224, 0.1);
+  --cs-line: rgba(20, 18, 31, 0.1);
+  --cs-panel: rgba(20, 18, 31, 0.03);
+  --cs-display: 'Sora', sans-serif;
+  --cs-sans: 'Plus Jakarta Sans', sans-serif;
+  background: var(--cs-bg);
+  color: var(--cs-ink);
+  font-family: var(--cs-sans);
+  min-height: 100vh;
+}
+
+.dark .cs-root {
+  --cs-bg: #0a0a0f;
+  --cs-ink: #f2f1f8;
+  --cs-ink-soft: #9b98ab;
+  --cs-accent: #7c6aff;
+  --cs-accent-soft: rgba(124, 106, 255, 0.16);
+  --cs-line: rgba(255, 255, 255, 0.08);
+  --cs-panel: rgba(255, 255, 255, 0.045);
+}
+
+.cs-display {
+  font-family: var(--cs-display);
+}
+
+.cs-panel {
+  background: var(--cs-panel);
+  border: 1px solid var(--cs-line);
+  backdrop-filter: blur(12px);
+}
+
+.cs-glow {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle at 30% 20%,
+    var(--cs-accent-soft),
+    transparent 60%
+  );
+}

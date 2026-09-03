@@ -18,6 +18,7 @@ function prefersReducedMotion() {
  */
 export function useRevealOnScroll<T extends HTMLElement>(options: {
   y?: number
+  scale?: number
   duration?: number
   delay?: number
   start?: string
@@ -29,18 +30,18 @@ export function useRevealOnScroll<T extends HTMLElement>(options: {
     if (!el) return
 
     if (prefersReducedMotion()) {
-      gsap.set(el, { opacity: 1, y: 0 })
+      gsap.set(el, { opacity: 1, y: 0, scale: 1 })
       return
     }
 
-    const { y = 16, duration = 0.22, delay = 0, start = 'top 85%' } = options
-    gsap.set(el, { opacity: 0, y })
+    const { y = 16, scale = 1, duration = 0.22, delay = 0, start = 'top 85%' } = options
+    gsap.set(el, { opacity: 0, y, scale })
     const trigger = ScrollTrigger.create({
       trigger: el,
       start,
       once: true,
       onEnter: () => {
-        gsap.to(el, { opacity: 1, y: 0, duration, delay, ease: EASE })
+        gsap.to(el, { opacity: 1, y: 0, scale: 1, duration, delay, ease: EASE })
       },
     })
 
@@ -59,6 +60,7 @@ export function useRevealOnScroll<T extends HTMLElement>(options: {
  */
 export function useStaggerReveal<T extends HTMLElement>(options: {
   y?: number
+  scale?: number
   duration?: number
   stagger?: number
   start?: string
@@ -72,18 +74,18 @@ export function useStaggerReveal<T extends HTMLElement>(options: {
     if (items.length === 0) return
 
     if (prefersReducedMotion()) {
-      gsap.set(items, { opacity: 1, y: 0 })
+      gsap.set(items, { opacity: 1, y: 0, scale: 1 })
       return
     }
 
-    const { y = 14, duration = 0.18, stagger = 0.05, start = 'top 85%' } = options
-    gsap.set(items, { opacity: 0, y })
+    const { y = 14, scale = 1, duration = 0.18, stagger = 0.05, start = 'top 85%' } = options
+    gsap.set(items, { opacity: 0, y, scale })
     const trigger = ScrollTrigger.create({
       trigger: container,
       start,
       once: true,
       onEnter: () => {
-        gsap.to(items, { opacity: 1, y: 0, duration, stagger, ease: EASE })
+        gsap.to(items, { opacity: 1, y: 0, scale: 1, duration, stagger, ease: EASE })
       },
     })
 
