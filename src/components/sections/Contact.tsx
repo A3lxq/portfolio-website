@@ -116,7 +116,7 @@ export function Contact() {
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 disabled:opacity-60 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
+            className="rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors duration-150 ease-snap hover:bg-neutral-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 disabled:opacity-60 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white"
           >
             {status === 'sending' ? 'Sending…' : 'Send message'}
           </button>
@@ -140,7 +140,7 @@ export function Contact() {
             <button
               type="button"
               onClick={handleCopyEmail}
-              className="rounded-md border border-neutral-300 px-2 py-0.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-900"
+              className="rounded-md border border-neutral-300 px-2 py-0.5 text-xs text-neutral-600 transition-colors duration-150 ease-snap hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-900"
             >
               {copyState === 'copied'
                 ? 'Copied!'

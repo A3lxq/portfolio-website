@@ -1,10 +1,13 @@
 import { Section } from '../layout/Section'
+import { useStaggerReveal } from '../../hooks/useScrollReveal'
 import { skillGroups } from '../../data/resume'
 
 export function Skills() {
+  const groupsRef = useStaggerReveal<HTMLDivElement>()
+
   return (
     <Section id="skills" title="Skills" eyebrow="ls -la ./skills" tinted>
-      <div className="space-y-8">
+      <div ref={groupsRef} className="space-y-8">
         {skillGroups.map((group) => (
           <div key={group.title}>
             <h3 className="font-mono text-sm font-semibold text-signal-cyan-dim dark:text-signal-cyan">

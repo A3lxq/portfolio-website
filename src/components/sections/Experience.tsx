@@ -1,10 +1,13 @@
 import { Section } from '../layout/Section'
+import { useStaggerReveal } from '../../hooks/useScrollReveal'
 import { experience } from '../../data/resume'
 
 export function Experience() {
+  const listRef = useStaggerReveal<HTMLOListElement>()
+
   return (
     <Section id="experience" title="Experience" eyebrow="git log --author=immanuvel">
-      <ol className="space-y-2">
+      <ol ref={listRef} className="space-y-2">
         {experience.map((entry, i) => (
           <li key={`${entry.org}-${entry.period}`} className="grid grid-cols-[2rem_1fr] gap-4">
             <div className="flex flex-col items-center">

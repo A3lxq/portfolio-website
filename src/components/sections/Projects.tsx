@@ -1,13 +1,15 @@
 import { Section } from '../layout/Section'
 import { SpotlightCard } from '../ui/SpotlightCard'
+import { useStaggerReveal } from '../../hooks/useScrollReveal'
 import { projects, type ProjectEntry } from '../../data/resume'
 
 export function Projects() {
   const [feature, ...rest] = projects
+  const gridRef = useStaggerReveal<HTMLDivElement>({ y: 20 })
 
   return (
     <Section id="projects" title="Projects" eyebrow="ls -la ~/repos" tinted wide>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div ref={gridRef} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <SpotlightCard className="sm:col-span-2 lg:col-span-2 lg:row-span-2">
           <ProjectBody project={feature} featured />
         </SpotlightCard>

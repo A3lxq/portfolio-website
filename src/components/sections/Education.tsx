@@ -1,10 +1,13 @@
 import { Section } from '../layout/Section'
+import { useStaggerReveal } from '../../hooks/useScrollReveal'
 import { education } from '../../data/resume'
 
 export function Education() {
+  const listRef = useStaggerReveal<HTMLDivElement>()
+
   return (
     <Section id="education" title="Education" eyebrow="cat education.log" tinted>
-      <div className="space-y-6">
+      <div ref={listRef} className="space-y-6">
         {education.map((entry) => (
           <div key={entry.school} className="flex gap-3">
             <span

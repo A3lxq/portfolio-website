@@ -23,7 +23,7 @@ export function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="transition-colors hover:text-neutral-900 dark:hover:text-white"
+                className="transition-colors duration-150 ease-snap hover:text-neutral-900 dark:hover:text-white"
               >
                 {link.label}
               </a>
@@ -36,7 +36,7 @@ export function Nav() {
             onClick={toggle}
             aria-pressed={isDark}
             aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="rounded-full border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 transition-colors hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
+            className="rounded-full border border-neutral-300 px-3 py-1.5 text-sm text-neutral-700 transition-colors duration-150 ease-snap hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
           >
             {isDark ? '☀️ Light' : '🌙 Dark'}
           </button>
@@ -85,7 +85,7 @@ export function Nav() {
               <a
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block rounded-md px-2 py-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                className="block rounded-md px-2 py-2 transition-colors duration-150 ease-snap hover:bg-neutral-100 dark:hover:bg-neutral-900"
               >
                 {link.label}
               </a>

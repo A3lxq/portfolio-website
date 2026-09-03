@@ -17,6 +17,13 @@ const HOLD_MS = 550
 const FADE_MS = 300
 const STORAGE_KEY = 'falcon-boot-seen'
 
+// Exported so other mount-time entrances (e.g. the Hero stagger reveal)
+// can hand off right as the boot overlay finishes, instead of animating
+// invisibly underneath it.
+export const BOOT_SEQUENCE_TOTAL_MS =
+  BOOT_LINES.length * LINE_DELAY_MS + HOLD_MS + FADE_MS
+export const BOOT_SEQUENCE_STORAGE_KEY = STORAGE_KEY
+
 /**
  * A brief, skippable Linux-boot-style splash — the site's "one distinctive
  * visual moment." Never blocks real content: the page underneath is fully

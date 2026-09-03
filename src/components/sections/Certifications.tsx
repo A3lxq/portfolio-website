@@ -1,4 +1,5 @@
 import { Section } from '../layout/Section'
+import { useStaggerReveal } from '../../hooks/useScrollReveal'
 import { certifications } from '../../data/resume'
 
 const TONE_CLASSES = [
@@ -8,9 +9,11 @@ const TONE_CLASSES = [
 ]
 
 export function Certifications() {
+  const listRef = useStaggerReveal<HTMLUListElement>({ stagger: 0.03 })
+
   return (
     <Section id="certifications" title="Certifications" eyebrow="cat certifications.log">
-      <ul className="flex flex-wrap gap-2 font-mono text-xs">
+      <ul ref={listRef} className="flex flex-wrap gap-2 font-mono text-xs">
         {certifications.map((cert, i) => (
           <li
             key={cert}
