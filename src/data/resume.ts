@@ -111,6 +111,20 @@ export const projects: ProjectEntry[] = [
     link: 'https://github.com/A3lxq/AEGISX-v3.3.0',
   },
   {
+    name: 'ATHENA AI-Brain',
+    description:
+      'An event-driven AI knowledge operating system that turns Obsidian into a self-maintaining, searchable knowledge base for any LLM — hybrid retrieval, MCP integration, Git-based automation, and provenance tracking.',
+    tags: ['AI Agents', 'RAG', 'MCP', 'Python'],
+    link: 'https://github.com/A3lxq/AI_BRAIN',
+  },
+  {
+    name: 'CavendeX',
+    description:
+      'An agentic AI operating system for SOC teams — multi-agent incident triage, investigation, and response, with a mandatory human approval gate before any action is taken.',
+    tags: ['Cybersecurity', 'Agentic AI', 'Python'],
+    link: 'https://github.com/A3lxq/Cavendex',
+  },
+  {
     name: 'Portfolio Website',
     description:
       'This site — rebuilt from a single static HTML page into a Vite + React + TypeScript build with real content, an accessible mobile-first layout, and a Three.js hero scene that degrades gracefully on low-power devices and under reduced-motion.',
