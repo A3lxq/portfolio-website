@@ -166,3 +166,23 @@ Two of the three previously flagged issues are genuinely fixed, not cosmetically
 - "Three.js hero scene is planned for a later iteration" stale copy: FIXED — Projects section now reads "...an accessible mobile-first layout, and a Three.js hero scene that degrades gracefully on low-power devices and under reduced-motion," which matches the live, running canvas (confirmed via `canvas[data-engine="three.js r185"]` in rendered DOM).
 - Contact form fallback for users without a configured mail client: FIXED — a "Copy" button now sits next to the mailto link; clicked it with clipboard permissions granted and `navigator.clipboard.readText()` returned the exact correct address (`alex.immanuvel1997@gmail.com`); the form's own status message ("Opening your email client — if nothing happens, copy the email address alongside and send it directly.") explicitly directs users to it. Not fully polished: the button shows no "Copied" confirmation state after 2+ seconds.
 - AegisX project link/repo: NOT FIXED — still only referenced in prose (About, Experience); no card, link, or repo exists in the Projects section.
+
+## HR Review — Iteration 6 — 2026-09-03
+
+1. Wow factor: 7/10 — The Linux-boot terminal intro (green-on-black JetBrains Mono, scanlines, particle falcon logo) is distinctive and on-theme, but zero name/headline/photo is visible until it plays out or you hit skip.
+2. Findability: 6/10 — Nav links to About/Skills/Experience are present immediately, but real content is still gated behind a ~3.5s scripted animation (skippable, and it auto-resolves on its own, so it's a doorway not a wall — but it's a doorway nobody needed).
+3. Credibility: 6/10 — Resume PDF, contact info, and repo links all check out with no dead links, but the AegisX project card renders with a huge dead whitespace gap (broken layout), and the copy explaining overlapping Vianet/DataMine job dates literally says "not a scheduling error" — that reads like a leftover debug note, not resume prose.
+4. Mobile: 8/10 — Clean single-column reflow, working hamburger menu, no horizontal scroll, hero fully rendered within ~1.7s of skip; no real complaints.
+5. Honesty: 8/10 — No fake AI demo anywhere; "Send message" is honestly just a mailto: link with a disclosed fallback ("if nothing happens, copy the email"), and the copy-email button's clipboard write is verified correct every time.
+6. Accessibility: 7/10 — Correct heading hierarchy, real landmarks, visible focus rings on every tabbable element, no keyboard trap, and the boot animation is fully skipped under prefers-reduced-motion; docked for the decorative "01/02" index labels failing contrast (2.6:1) and the WebGL canvas having no aria-hidden.
+7. Performance: 6/10 — DOMContentLoaded in 0.8s and networkidle under 2s, but console is spitting repeated "GPU stall due to ReadPixels" WebGL warnings and a deprecated THREE.Clock warning, and real content is still stuck behind the boot sequence for non-skippers.
+8. Polish vs. aspirational ceiling: 6/10 — The terminal/hacker art direction is cohesive and above generic-template quality for a solo build, but the AegisX card layout bug and inconsistent falcon-logo rendering (dense particle cluster on desktop vs. sparse wireframe on mobile) show it wasn't fully QA'd.
+
+**Overall (weighted): 6/10**
+
+The underlying substance is real — actual repos, a real tech stack breakdown, a real resume PDF, no fake AI theater — so this candidate clears the "not a liar" bar easily and I'd look at the resume. But the site itself has visible unforced errors (a broken-looking project card, a content-gating animation, defensive filler copy explaining away a resume date issue) that a busy screener reads as "not fully finished," and that costs it a second look from anyone comparing it against ten other tabs open in the same five minutes.
+
+**Top 3 fixes before the next iteration:**
+1. Fix the AegisX project card — it has a large empty gap below its content, roughly double the height its text needs; looks like a broken layout, not a design choice.
+2. Cut the boot-splash gate to near-instant (or skip it by default) — a prominent skip button doesn't fully offset making every visitor wait through terminal text before seeing the name and headline.
+3. Rewrite the "not a scheduling error" line into normal resume language, and prerender/SSR the initial HTML — right now curl/view-source returns an empty `<div id="root">`, which is a real problem for ATS parsers and any recruiter who checks source before running the JS.
