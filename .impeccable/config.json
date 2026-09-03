@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/themes/declassified/sections.tsx"
+        ],
+        "createdAt": "2026-09-03T18:31:27.687Z",
+        "reason": "Implementer judgment: this theme (Declassified) deliberately uses thick 2px+ rules everywhere (nav, section dividers, project-card borders, hero top/bottom rules) as its core 'blueprint/technical-print' visual language, not a generic SaaS card accent. Already changed the flagged element from solid to border-double (a real technical-drawing convention) specifically to move away from the exact generic pattern this rule targets; the literal 'border-l-4' className string still matches regardless of border-style, so the detector can't distinguish the two. Not user-confirmed — my call as implementer, consistent with the theme's own established rule-heavy design system."
+      }
+    ]
+  }
+}
