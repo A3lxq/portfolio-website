@@ -9,11 +9,13 @@ const BOOT_LINES = [
   '[    0.958873] Loading kernel module: networking.ko....... [ OK ]',
   '[    1.203015] Starting falcon.service..................... [ OK ]',
   '[    1.421559] Establishing secure session................ [ OK ]',
-  'Welcome, Immanuvel Alex.',
 ]
+const WELCOME_LINE = 'Welcome, Immanuvel Alex.'
+const GLITCH_LINE_INDEXES = new Set([2, 5])
 
 const LINE_DELAY_MS = 190
-const HOLD_MS = 550
+const CHAR_DELAY_MS = 18
+const HOLD_MS = 400
 const FADE_MS = 300
 const STORAGE_KEY = 'falcon-boot-seen'
 
@@ -21,7 +23,10 @@ const STORAGE_KEY = 'falcon-boot-seen'
 // can hand off right as the boot overlay finishes, instead of animating
 // invisibly underneath it.
 export const BOOT_SEQUENCE_TOTAL_MS =
-  BOOT_LINES.length * LINE_DELAY_MS + HOLD_MS + FADE_MS
+  BOOT_LINES.length * LINE_DELAY_MS +
+  WELCOME_LINE.length * CHAR_DELAY_MS +
+  HOLD_MS +
+  FADE_MS
 export const BOOT_SEQUENCE_STORAGE_KEY = STORAGE_KEY
 
 /**
@@ -33,6 +38,7 @@ export const BOOT_SEQUENCE_STORAGE_KEY = STORAGE_KEY
  */
 export function BootSequence({ onDone }: { onDone: () => void }) {
   const [visibleCount, setVisibleCount] = useState(0)
+  const [welcomeChars, setWelcomeChars] = useState(0)
   const [fading, setFading] = useState(false)
   const timeouts = useRef<number[]>([])
   const finished = useRef(false)
@@ -58,9 +64,18 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
       timeouts.current.push(id)
     })
 
+    const linesDoneAt = BOOT_LINES.length * LINE_DELAY_MS
+    for (let c = 1; c <= WELCOME_LINE.length; c++) {
+      const id = window.setTimeout(
+        () => setWelcomeChars(c),
+        linesDoneAt + c * CHAR_DELAY_MS,
+      )
+      timeouts.current.push(id)
+    }
+
     const finishId = window.setTimeout(
       finish,
-      BOOT_LINES.length * LINE_DELAY_MS + HOLD_MS,
+      linesDoneAt + WELCOME_LINE.length * CHAR_DELAY_MS + HOLD_MS,
     )
     timeouts.current.push(finishId)
 
@@ -87,27 +102,26 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
     <div
       aria-hidden="true"
       onClick={finish}
-      className={`fixed inset-0 z-50 flex cursor-pointer flex-col justify-center bg-black px-6 font-mono text-sm text-hacker-green transition-opacity sm:text-base ${
+      className={`boot-crt-in fixed inset-0 z-50 flex cursor-pointer flex-col justify-center overflow-hidden bg-black px-6 font-mono text-sm text-hacker-green transition-opacity sm:text-base ${
         fading ? 'opacity-0' : 'opacity-100'
       }`}
       style={{ transitionDuration: `${FADE_MS}ms` }}
     >
-      <div className="mx-auto w-full max-w-xl">
+      <div aria-hidden="true" className="scanlines-boot pointer-events-none absolute inset-0" />
+      <div className="relative mx-auto w-full max-w-xl">
         {BOOT_LINES.slice(0, visibleCount).map((line, i) => (
-          <p
-            key={line}
-            className={
-              i === BOOT_LINES.length - 1
-                ? 'mt-3 font-medium text-white'
-                : 'opacity-90'
-            }
-          >
+          <p key={line} className={GLITCH_LINE_INDEXES.has(i) ? 'boot-glitch opacity-90' : 'opacity-90'}>
             {line}
           </p>
         ))}
-        {visibleCount > 0 && visibleCount < BOOT_LINES.length && (
-          <span className="cursor-blink">▌</span>
+        {visibleCount >= BOOT_LINES.length && welcomeChars > 0 && (
+          <p className="mt-3 font-medium text-white">
+            {WELCOME_LINE.slice(0, welcomeChars)}
+            {welcomeChars < WELCOME_LINE.length && <span className="cursor-blink">▌</span>}
+          </p>
         )}
+        {visibleCount > 0 &&
+          visibleCount < BOOT_LINES.length && <span className="cursor-blink">▌</span>}
       </div>
       <p className="absolute right-4 top-4 rounded border border-hacker-green-dim px-2.5 py-1 text-xs font-medium text-hacker-green sm:right-6 sm:top-6 sm:text-sm">
         skip &gt;&gt; click or press any key
