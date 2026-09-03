@@ -1,18 +1,33 @@
+import { usePointerGlow } from '../../hooks/usePointerGlow'
+
 /**
  * Zero-WebGL static fallback: the same falcon silhouette (see
  * ../../three/falconShape.ts) hand-encoded as an SVG path, with a soft
  * glow filter. Used when useCanRender3D() reports the device/preference
- * can't or shouldn't run the particle hologram — never a blank hero.
+ * can't or shouldn't run the particle hologram — never a blank hero, and
+ * never just an inert image either: it draws itself on once, then holds a
+ * pointer-following glow behind it (skipped on touch devices).
  */
 export function FalconFallback() {
+  const glowRef = usePointerGlow<HTMLDivElement>()
+
   return (
     <div
+      ref={glowRef}
       aria-hidden="true"
-      className="flex h-24 w-24 items-center justify-center md:h-[320px] md:w-full md:max-w-md"
+      className="relative flex h-24 w-24 items-center justify-center md:h-[320px] md:w-full md:max-w-md"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(45% circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(57, 255, 136, 0.18), transparent 75%)',
+        }}
+      />
       <svg
         viewBox="0 0 200 200"
-        className="h-full w-full falcon-fallback-pulse"
+        className="relative h-full w-full"
         role="presentation"
       >
         <defs>
@@ -31,6 +46,7 @@ export function FalconFallback() {
           strokeWidth="1.4"
           strokeLinejoin="round"
           filter="url(#falcon-glow)"
+          className="falcon-fallback-draw"
         />
       </svg>
     </div>

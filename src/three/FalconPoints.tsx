@@ -20,10 +20,10 @@ const vertexShader = /* glsl */ `
       : 1.0 - pow(-2.0 * uProgress + 2.0, 3.0) / 2.0;
     vec3 pos = mix(aScatter, position, eased);
 
-    // gentle drift/shimmer once assembled
+    // drift/shimmer once assembled — visible motion, not just a static hologram
     float settle = smoothstep(0.85, 1.0, uProgress);
-    pos.x += sin(uTime * 0.6 + aRandom * 6.28) * 0.015 * settle;
-    pos.y += cos(uTime * 0.5 + aRandom * 6.28) * 0.015 * settle;
+    pos.x += sin(uTime * 0.6 + aRandom * 6.28) * 0.05 * settle;
+    pos.y += cos(uTime * 0.5 + aRandom * 6.28) * 0.05 * settle;
 
     vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
     gl_PointSize = (0.9 + aRandom * 0.7) * (26.0 / -mvPosition.z);

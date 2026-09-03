@@ -1,5 +1,6 @@
 import { Canvas } from '@react-three/fiber'
 import { FalconRig } from './FalconRig'
+import { ConstellationField } from './ConstellationField'
 
 export default function FalconScene() {
   return (
@@ -9,6 +10,7 @@ export default function FalconScene() {
       dpr={[1, 1.75]}
       style={{ pointerEvents: 'none' }}
     >
+      <ConstellationField />
       <FalconRig />
     </Canvas>
   )
