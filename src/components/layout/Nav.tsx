@@ -14,7 +14,7 @@ export function Nav() {
       >
         <a
           href="#top"
-          className="font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"
+          className="font-mono font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"
         >
           {profile.name}
         </a>

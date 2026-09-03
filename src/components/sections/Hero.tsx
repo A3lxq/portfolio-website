@@ -20,7 +20,7 @@ export function Hero() {
         />
         STATUS: OPEN_TO_OPPORTUNITIES
       </p>
-      <h1 className="mt-6 text-4xl font-semibold tracking-tight text-neutral-900 md:text-5xl dark:text-neutral-100">
+      <h1 className="mt-6 font-mono text-display font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
         {profile.name}
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-neutral-600 dark:text-neutral-300">

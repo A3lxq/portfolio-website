@@ -57,7 +57,16 @@ export function Contact() {
 
   return (
     <Section id="contact" title="Contact" eyebrow="./contact --secure">
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800">
+        <div className="flex items-center gap-1.5 border-b border-neutral-200 bg-neutral-50 px-4 py-2.5 dark:border-neutral-800 dark:bg-neutral-900/60">
+          <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-terminal-red" />
+          <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-alert-amber" />
+          <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full bg-hacker-green" />
+          <span className="ml-2 font-mono text-xs text-neutral-500 dark:text-neutral-400">
+            secure-channel — encrypted
+          </span>
+        </div>
+        <div className="grid gap-8 p-6 md:grid-cols-2 md:p-8">
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>
             <label
@@ -166,6 +175,7 @@ export function Contact() {
               GitHub
             </a>
           </p>
+        </div>
         </div>
       </div>
     </Section>

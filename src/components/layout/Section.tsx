@@ -6,11 +6,15 @@ export function Section({
   eyebrow,
   children,
   tinted = false,
+  wide = false,
+  titleClassName = 'font-mono text-section font-semibold tracking-tight text-neutral-900 dark:text-neutral-100',
 }: PropsWithChildren<{
   id: string
   title: string
   eyebrow?: string
   tinted?: boolean
+  wide?: boolean
+  titleClassName?: string
 }>) {
   return (
     <section
@@ -18,22 +22,21 @@ export function Section({
       aria-labelledby={`${id}-heading`}
       className={tinted ? 'bg-neutral-50 dark:bg-neutral-900/40' : undefined}
     >
-      <div className="mx-auto max-w-5xl px-6 py-16">
+      <div
+        className={`mx-auto px-6 py-16 sm:py-20 ${wide ? 'max-w-6xl' : 'max-w-5xl'}`}
+      >
         {eyebrow && (
           <p
             aria-hidden="true"
-            className="prompt-eyebrow mb-2 font-mono text-xs text-neutral-500 dark:text-neutral-500"
+            className="prompt-eyebrow mb-3 font-mono text-xs text-neutral-500 dark:text-neutral-500"
           >
             {eyebrow}
           </p>
         )}
-        <h2
-          id={`${id}-heading`}
-          className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100"
-        >
+        <h2 id={`${id}-heading`} className={titleClassName}>
           {title}
         </h2>
-        <div className="mt-6">{children}</div>
+        <div className="mt-8">{children}</div>
       </div>
     </section>
   )

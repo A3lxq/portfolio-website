@@ -4,8 +4,30 @@
 
 @theme {
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Primary accent — assembled/verified state, links, success. */
   --color-hacker-green: #39ff88;
   --color-hacker-green-dim: #1f8a4d;
+  /* Status/pending — replaces incidental stock Tailwind amber. */
+  --color-alert-amber: #ffb454;
+  --color-alert-amber-dim: #8a6420;
+  /* Secondary interactive accent — hovers, pointer-glow, secondary tags. */
+  --color-signal-cyan: #39d9ff;
+  --color-signal-cyan-dim: #1f6f8a;
+  /* Rare emphasis only (boot glitch, critical states) — used once or twice sitewide. */
+  --color-terminal-red: #ff5f56;
+
+  /* Typographic scale — gives sections a real hierarchy instead of one
+     repeated text-2xl heading class. */
+  --text-display: clamp(2.75rem, 4vw + 1.5rem, 4.75rem);
+  --text-display--line-height: 1.02;
+  --text-section: clamp(1.75rem, 1.4vw + 1.25rem, 2.5rem);
+  --text-section--line-height: 1.1;
+
+  /* Shared easing for purposeful, sub-300ms micro-interactions (an
+     expo-out feel) instead of default CSS/Tailwind linear/ease. */
+  --ease-snap: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -18,7 +18,7 @@ function App() {
   const [booting, setBooting] = useState(true)
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 scanlines">
+    <div className="min-h-screen bg-white font-sans text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 scanlines">
       {booting && <BootSequence onDone={() => setBooting(false)} />}
       <FalconHero />
       <a
