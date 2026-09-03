@@ -20,6 +20,8 @@ You are evaluating `github.com/A3lxq/portfolio-website` (Immanuvel Alex's person
 7. **Keyboard-only pass**: tab through the page, confirm focus is visible and nothing traps focus.
 8. **Load timing**: note anything that visibly blocks content behind a slow 3D/JS bundle.
 
+When testing an interactive element's confirmation/feedback state (e.g. a "Copied!" message), use an exact accessible-name locator (`getByRole('button', { name: 'Copy' })` before, `{ name: 'Copied!' }` after) — never a positional selector like `.first()` scoped to a section, since multiple buttons can share a container and a positional match can silently grab the wrong element, producing a false "no feedback" finding. If a check seems to fail, re-verify with a second, independent method (e.g. also read the aria-live region's text content directly) before reporting it as broken.
+
 ## Rubric (score each 1-10, no half-favors, write one blunt sentence per line)
 
 1. **First-impression wow factor** (5s, no scroll)
