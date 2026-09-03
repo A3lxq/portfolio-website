@@ -104,7 +104,7 @@ export function About() {
     <Field id="about" index="02" title="About">
       <div
         ref={ref}
-        className="max-w-3xl border-l-4 border-[var(--dc-accent)] pl-6 text-lg leading-relaxed text-[var(--dc-ink-soft)]"
+        className="max-w-3xl border-l-4 border-double border-[var(--dc-accent)] pl-6 text-lg leading-relaxed text-[var(--dc-ink-soft)]"
       >
         <p>{profile.summary}</p>
         <p className="dc-mono mt-4 text-xs uppercase tracking-wide">{profile.location}</p>
