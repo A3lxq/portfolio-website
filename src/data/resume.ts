@@ -111,16 +111,11 @@ export const projects: ProjectEntry[] = [
     link: 'https://github.com/A3lxq/AEGISX-v3.3.0',
   },
   {
-    name: 'AI Chatbot Automation',
-    description:
-      'An automation-focused chatbot project exploring rules-based and AI-driven conversational flows for practical support workflows.',
-    tags: ['AI Automation', 'Chatbots'],
-  },
-  {
     name: 'Portfolio Website',
     description:
       'This site — rebuilt from a single static HTML page into a Vite + React + TypeScript build with real content, an accessible mobile-first layout, and a Three.js hero scene that degrades gracefully on low-power devices and under reduced-motion.',
     tags: ['React', 'TypeScript', 'Three.js'],
+    link: 'https://github.com/A3lxq/portfolio-website',
   },
 ]
 

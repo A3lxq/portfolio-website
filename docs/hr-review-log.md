@@ -2,6 +2,30 @@
 
 Score trend across build iterations. Each entry is produced by the `hr-review` skill, run by a fresh, isolated subagent with no knowledge of the implementation — no favoritism, no sugarcoating.
 
+## HR Review — Iteration 3 — 2026-09-03
+
+1. Wow factor: 6/10 — Clean, fast, minimal corporate-Tailwind look with a nice subtle particle-bird logo animation, but nothing in the first 5 seconds is genuinely memorable or differentiated from a thousand other dark/light-toggle portfolio templates.
+2. Findability: 9/10 — Name, title, location, "Download Résumé," and full About/Skills/Experience content are all visible with zero scrolling and zero animation gatekeeping; the 3D piece sits quietly in a corner and never blocks anything.
+3. Credibility: 6/10 — All facts (email, phone, location, employment dates) are internally consistent and the AegisX project is honestly flagged "in active development," but two of the three showcased projects have no repo/demo link at all, so a recruiter has no way to verify the "AI-powered," "agentic AI," "dozens of modules" claims beyond one card.
+4. Mobile: 9/10 — At 390x844 the layout reflows cleanly, the hamburger menu opens a proper full-width panel with a visible close (X), buttons stack legibly, dark mode still works.
+5. Honesty: 6/10 — The contact form does NOT fake a backend call: submitting shows the status text "Opening your email client — if nothing happens, copy the email address alongside and send it directly," which is an honest mailto: handoff, not a lie. No fake-AI chatbot exists anywhere on the site (checked the JS bundle directly — no interactive chatbot, no konami-code trigger), so nothing is dishonestly presented as AI. But it costs points that the "AI Chatbot Automation" and "Portfolio Website" project cards are dead-end text with no link to click, and the copy-email button gives literally zero visible confirmation even when the clipboard write silently succeeds.
+6. Accessibility: 9/10 — axe-core returned zero violations on light, dark, and mobile-dark renders; proper h1→h2→h3 hierarchy, header/nav/main/footer landmarks, nav aria-label="Primary," skip-to-content link, full keyboard tab cycle with visible focus rings and no trap, and prefers-reduced-motion is genuinely respected (canvas is not even mounted, replaced by a static SVG outline) — docked one point only for the copy button's silent success state.
+7. Performance: 9/10 — Total page weight ~124KB (116KB JS + 8KB CSS), DOMContentLoaded at 239ms, nothing blocks content behind a heavy bundle.
+8. Polish vs. aspirational ceiling: 6/10 — Above-average for a solo build (consistent spacing, real dark mode, graceful animation degradation) but visually generic — safe Tailwind card-grid design with no distinctive art direction.
+
+**Overall (weighted): 7/10**
+
+This candidate would get a second look from me: the site is fast, honest about what's real (no fake AI, a plainly-labeled mailto fallback instead of a pretend backend), and genuinely more accessible than almost anything I screen — but the fact that two of three "projects" are unlinked text blocks and the whole thing reads as a competent template rather than a personal statement keeps it out of top-tier territory.
+
+**Top 3 fixes before the next iteration:**
+1. Add real repo/demo links to "AI Chatbot Automation" and "Portfolio Website" (the latter is absurd — it's THIS repo, link to it) or cut the cards; unverifiable project claims are the single biggest credibility drag.
+2. Give the "Copy" email button actual visible feedback (text change to "Copied!" or a toast) — right now a successful clipboard write is indistinguishable from nothing happening.
+3. Invest in one distinctive visual moment (better typography pairing, a stronger hero treatment, a real project screenshot/demo GIF) — the design is competent but forgettable next to other solo portfolios.
+
+**Follow-up on previously flagged issues (from Iteration 2 patched):**
+- AegisX project link/repo: FIXED — a real project card now exists with an honest "in active development" status label and a "Repo" link resolving to `https://github.com/A3lxq/AEGISX-v3.3.0` (confirmed HTTP 200 via GitHub API, real public repo matching the described "AI-powered security platform... 46 modules").
+- Copy-to-clipboard visible confirmation: NOT FIXED (on the live site as tested) — with clipboard permission denied, the button correctly falls back to "Select & copy manually" (the honest failure-state message is present and working). But with clipboard permission granted, `navigator.clipboard.readText()` confirmed the email address was actually copied, yet the button text and all `aria-live` regions were polled every 50ms for 2 full seconds after the click and never changed from "Copy" — no "Copied!" text and no aria-live announcement fired. The failure path works; the success-confirmation path does not appear live, despite being reported as implemented. Worth checking whether the deployed GitHub Pages build is stale relative to source, or whether the success-state code has a bug (e.g. state update not re-rendering, or gated behind a condition that isn't met).
+
 ## HR Review — Iteration 1 — 2026-09-02
 
 1. Wow factor: 5/10 — Clean, confident typography and a clear "OPEN TO OPPORTUNITIES" badge, but it's a generic light/dark Tailwind template look with no photo, no signature visual, nothing that makes it memorable in the first 5 seconds.
