@@ -121,8 +121,16 @@ export const projects: ProjectEntry[] = [
   {
     name: 'CavendeX',
     description:
-      'An agentic AI operating system for SOC teams — multi-agent incident triage, investigation, and response, with a mandatory human approval gate before any action is taken.',
-    tags: ['Cybersecurity', 'Agentic AI', 'Python'],
+      'An agentic AI operating system for SOC teams — multi-agent incident triage, investigation, and response, with live connectors for CrowdStrike, Microsoft Sentinel, and syslog, and a mandatory human approval gate before any action is taken.',
+    tags: [
+      'Python',
+      'FastAPI',
+      'LangGraph',
+      'LangChain',
+      'ChromaDB',
+      'Redis',
+      'Docker',
+    ],
     link: 'https://github.com/A3lxq/Cavendex',
   },
   {
