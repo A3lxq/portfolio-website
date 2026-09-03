@@ -97,9 +97,19 @@ export type ProjectEntry = {
   name: string
   description: string
   tags: string[]
+  status?: string
+  link?: string
 }
 
 export const projects: ProjectEntry[] = [
+  {
+    name: 'AegisX',
+    description:
+      'A personal cybersecurity automation platform — an AI-powered security tool wrapping dozens of modules for practical security workflows and analysis.',
+    tags: ['Cybersecurity', 'AI Automation', 'Security Tooling'],
+    status: 'In active development — undergoing bug fixes and a UI rehaul',
+    link: 'https://github.com/A3lxq/AEGISX-v3.3.0',
+  },
   {
     name: 'AI Chatbot Automation',
     description:

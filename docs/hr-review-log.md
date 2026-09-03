@@ -66,3 +66,28 @@ This is a technically competent, fast, accessible site that doesn't let its 3D t
 1. Update or remove the "A Three.js hero scene is planned for a later iteration" line in the Portfolio Website project card — it's already shipped, so the current copy makes the site look unmaintained/inattentive to detail.
 2. Give the contact form a fallback for users without a configured desktop mail client (e.g., a mailto link plus a copy-to-clipboard button, or a real form backend like Formspree) since mailto silently does nothing in many corporate/Chromebook environments.
 3. Add a project link or repo for AegisX (the flagship project mentioned in About/Experience) since it's currently talked about but not shown anywhere in the Projects section, which reads as unverifiable.
+
+## HR Review — Iteration 2 (patched) — 2026-09-02
+
+1. Wow factor: 7/10 — Same particle-falcon hero as last pass, resolves cleanly in ~1.3s, competent but still a safe/familiar template look, not a differentiator.
+2. Findability: 9/10 — Name, title, location, and four CTAs are fully legible in the first frame, full anchor nav is present, and the 3D scene never blocks or delays real content.
+3. Credibility: 7/10 — The previously-flagged self-contradiction is genuinely fixed (Projects copy now correctly says the Three.js hero "degrades gracefully," matching the live canvas), but AegisX is still cited twice as flagship work (About, Experience) with zero project card, screenshot, or repo link anywhere on the site, leaving it unverifiable.
+4. Mobile: 9/10 — Full-page 390px screenshot shows clean single-column reflow, no overflow, hamburger menu present, and the hero canvas is swapped for a lightweight static SVG outline.
+5. Honesty: 8/10 — Contact form is honestly labeled as a mailto handoff, and it now ships a genuinely working copy-to-clipboard fallback (verified via clipboard read: correct address copied) that the status text explicitly points users to; docked because the Copy button gives zero visual confirmation on click (text stays "Copy" for 2+ seconds after a successful copy), so a user has no feedback the action worked.
+6. Accessibility: 9/10 — Visible focus outline on every one of 20+ tab stops with no trap, skip link moves real DOM focus into `<main tabindex="-1">`, reduced-motion is fully honored (canvas count drops to 0, static line-art shown instead), and heading/landmark structure is clean (single h1, sequential h2/h3, header/nav/main/footer/section landmarks).
+7. Performance: 9/10 — DOMContentLoaded in 0.31s, networkidle in 1.31s, zero failed requests, only console output is a benign THREE.Clock deprecation notice and GPU perf warnings.
+8. Polish vs. aspirational ceiling: 7/10 — Still a generic card/list layout, but the graceful hero degradation (mobile static SVG, reduced-motion static SVG) and now-accurate self-description put it above the average solo bootcamp portfolio.
+
+**Overall (weighted): 8/10**
+
+Two of the three previously flagged issues are genuinely fixed, not cosmetically patched: I read the live copy and the "planned for later" contradiction is gone (it now accurately describes the shipped Three.js scene), and I clicked the Copy button with clipboard permissions granted and the correct email address landed in the clipboard, with the on-page status text explicitly pointing to it as a fallback. The one still-open item — AegisX cited twice as flagship work with no project card or link anywhere — is a smaller, more common portfolio gap than a self-contradiction, so it doesn't erase the credibility gain. I'd take a second look at this candidate off the site alone; the fundamentals (fast, accessible, honest, navigable, and now internally consistent) are solid, and what's left is finishing the project showcase and a small UI polish item.
+
+**Top 3 fixes before the next iteration:**
+1. Give the Copy button a visible confirmation state (e.g., swap text to "Copied!" for ~2s, or add an aria-live announcement) — right now it silently succeeds with zero feedback, which is indistinguishable from doing nothing.
+2. Add a real project card (with screenshot or repo link) for AegisX — it's the headline project in both the About and Experience copy, but a recruiter clicking into Projects finds no evidence it exists.
+3. Put a lightweight content-consistency check in the release process — this is the second review cycle in a row where the site's self-description of its own tech drifted from what was actually shipped; catching that before it goes live matters more than any single visual fix.
+
+**Follow-up on previously flagged issues (from Iteration 2):**
+- "Three.js hero scene is planned for a later iteration" stale copy: FIXED — Projects section now reads "...an accessible mobile-first layout, and a Three.js hero scene that degrades gracefully on low-power devices and under reduced-motion," which matches the live, running canvas (confirmed via `canvas[data-engine="three.js r185"]` in rendered DOM).
+- Contact form fallback for users without a configured mail client: FIXED — a "Copy" button now sits next to the mailto link; clicked it with clipboard permissions granted and `navigator.clipboard.readText()` returned the exact correct address (`alex.immanuvel1997@gmail.com`); the form's own status message ("Opening your email client — if nothing happens, copy the email address alongside and send it directly.") explicitly directs users to it. Not fully polished: the button shows no "Copied" confirmation state after 2+ seconds.
+- AegisX project link/repo: NOT FIXED — still only referenced in prose (About, Experience); no card, link, or repo exists in the Projects section.

@@ -10,15 +10,18 @@ export function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
     'idle',
   )
-  const [copied, setCopied] = useState(false)
+  const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>(
+    'idle',
+  )
 
   async function handleCopyEmail() {
     try {
       await navigator.clipboard.writeText(profile.email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setCopyState('copied')
     } catch {
-      // Clipboard API unavailable — the email is still selectable/visible text.
+      setCopyState('failed')
+    } finally {
+      setTimeout(() => setCopyState('idle'), 2500)
     }
   }
 
@@ -130,8 +133,17 @@ export function Contact() {
               onClick={handleCopyEmail}
               className="rounded-md border border-neutral-300 px-2 py-0.5 text-xs text-neutral-600 transition-colors hover:bg-neutral-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-500 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-900"
             >
-              {copied ? 'Copied!' : 'Copy'}
+              {copyState === 'copied'
+                ? 'Copied!'
+                : copyState === 'failed'
+                  ? 'Select & copy manually'
+                  : 'Copy'}
             </button>
+            <span role="status" aria-live="polite" className="sr-only">
+              {copyState === 'copied' && 'Email address copied to clipboard.'}
+              {copyState === 'failed' &&
+                'Could not copy automatically — please select and copy the address manually.'}
+            </span>
           </p>
           <p>{profile.phone}</p>
           <p>{profile.location}</p>
