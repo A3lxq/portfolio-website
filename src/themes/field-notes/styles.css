@@ -34,6 +34,29 @@
   font-family: var(--fn-serif);
 }
 
+.fn-hero-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--px, 70%) var(--py, 20%),
+    color-mix(in srgb, var(--fn-accent) 12%, transparent),
+    transparent 70%
+  );
+  transition: background-position 0.2s var(--ease-snap, ease-out);
+}
+
+@keyframes fn-breathe {
+  0%, 100% { border-left-color: var(--fn-accent); }
+  50% { border-left-color: color-mix(in srgb, var(--fn-accent) 40%, transparent); }
+}
+
+.fn-breathe-border {
+  animation: fn-breathe 3.6s ease-in-out infinite;
+}
+
 .fn-grain::before {
   content: '';
   position: fixed;

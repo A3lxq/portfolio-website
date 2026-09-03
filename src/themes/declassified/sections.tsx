@@ -1,5 +1,6 @@
 import { useState, type FormEvent, type PropsWithChildren } from 'react'
 import { useRevealOnScroll, useStaggerReveal } from '../../hooks/useScrollReveal'
+import { usePointerTracking } from '../../hooks/usePointerTracking'
 import {
   certifications,
   education,
@@ -45,15 +46,21 @@ function Field({
 }
 
 export function Hero() {
-  const topRule = useRevealOnScroll<HTMLDivElement>({ y: 0, duration: 0.01 })
+  const contentRef = useStaggerReveal<HTMLDivElement>({ y: 10, duration: 0.18, stagger: 0.05 })
+  const pointerRef = usePointerTracking<HTMLElement>()
   return (
-    <section id="top" aria-label="Introduction" className="relative">
+    <section
+      ref={pointerRef}
+      id="top"
+      aria-label="Introduction"
+      className="dc-scanner relative overflow-hidden"
+    >
       <div className="dc-rule h-1 w-full bg-[var(--dc-line)]" />
-      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-24">
+      <div ref={contentRef} className="relative z-[1] mx-auto max-w-6xl px-6 py-16 md:py-24">
         <Cross className="left-4 top-4" />
         <Cross className="right-4 top-4" />
-        <p ref={topRule} className="dc-mono text-xs uppercase tracking-widest text-[var(--dc-accent)]">
-          FILE_01 — PERSONNEL RECORD
+        <p className="dc-mono text-xs uppercase tracking-widest text-[var(--dc-accent)]">
+          FILE_01 — PERSONNEL RECORD <span className="cursor-blink">▌</span>
         </p>
         <h1 className="mt-3 break-words text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-6xl md:text-8xl">
           {profile.name}

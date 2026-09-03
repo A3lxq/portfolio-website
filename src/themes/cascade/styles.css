@@ -48,8 +48,17 @@
   pointer-events: none;
   z-index: 0;
   background: radial-gradient(
-    circle at 30% 20%,
+    circle at var(--px, 30%) var(--py, 20%),
     var(--cs-accent-soft),
     transparent 60%
   );
+}
+
+@keyframes cs-glow-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+.cs-glow-breathe {
+  animation: cs-glow-pulse 6s ease-in-out infinite;
 }

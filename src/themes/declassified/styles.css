@@ -43,6 +43,53 @@
   }
 }
 
+@keyframes dc-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: dc-blink 1.1s step-end infinite;
+}
+
+.dc-scanner::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  left: var(--px, 50%);
+  top: var(--py, 50%);
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--dc-accent);
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.dc-scanner:hover::after {
+  opacity: 0.6;
+}
+
+.dc-scanner::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  left: var(--px, 50%);
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--dc-accent);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.dc-scanner:hover::before {
+  opacity: 0.15;
+}
+
 .dc-cross {
   position: absolute;
   width: 12px;

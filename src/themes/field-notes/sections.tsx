@@ -1,5 +1,6 @@
 import { useState, type FormEvent, type PropsWithChildren, type ReactNode } from 'react'
 import { useRevealOnScroll, useStaggerReveal } from '../../hooks/useScrollReveal'
+import { usePointerTracking } from '../../hooks/usePointerTracking'
 import {
   certifications,
   education,
@@ -40,13 +41,19 @@ function Field({
 
 export function Hero() {
   const heroRef = useStaggerReveal<HTMLDivElement>({ y: 20, duration: 0.3, stagger: 0.08 })
+  const pointerRef = usePointerTracking<HTMLElement>()
   const firstSentence = profile.summary.split(/(?<=[.!?])\s+/)[0]
 
   return (
-    <section id="top" aria-label="Introduction" className="relative z-[1]">
+    <section
+      ref={pointerRef}
+      id="top"
+      aria-label="Introduction"
+      className="fn-hero-glow relative z-[1] overflow-hidden"
+    >
       <div
         ref={heroRef}
-        className="mx-auto grid max-w-5xl gap-10 px-6 pb-20 pt-24 md:grid-cols-[1.3fr_1fr] md:pt-32"
+        className="relative z-[1] mx-auto grid max-w-5xl gap-10 px-6 pb-20 pt-24 md:grid-cols-[1.3fr_1fr] md:pt-32"
       >
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--fn-ink-soft)]">
@@ -90,7 +97,7 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <blockquote className="fn-serif border-l-2 border-[var(--fn-accent)] pl-6 text-xl italic leading-relaxed text-[var(--fn-ink-soft)] md:mt-4">
+        <blockquote className="fn-serif fn-breathe-border border-l-2 border-[var(--fn-accent)] pl-6 text-xl italic leading-relaxed text-[var(--fn-ink-soft)] md:mt-4">
           “{firstSentence}”
         </blockquote>
       </div>

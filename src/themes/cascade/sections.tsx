@@ -1,5 +1,6 @@
 import { useState, type FormEvent, type PropsWithChildren } from 'react'
 import { useRevealOnScroll, useStaggerReveal } from '../../hooks/useScrollReveal'
+import { usePointerTracking } from '../../hooks/usePointerTracking'
 import { MagneticButton } from './MagneticButton'
 import {
   certifications,
@@ -38,9 +39,15 @@ function Field({
 
 export function Hero() {
   const ref = useStaggerReveal<HTMLDivElement>({ y: 24, scale: 0.98, duration: 0.5, stagger: 0.1 })
+  const pointerRef = usePointerTracking<HTMLElement>()
   return (
-    <section id="top" aria-label="Introduction" className="relative overflow-hidden">
-      <div className="cs-glow" aria-hidden="true" />
+    <section
+      ref={pointerRef}
+      id="top"
+      aria-label="Introduction"
+      className="relative overflow-hidden"
+    >
+      <div className="cs-glow cs-glow-breathe" aria-hidden="true" />
       <div
         ref={ref}
         className="relative z-[1] mx-auto flex max-w-6xl flex-col items-start px-6 pb-24 pt-28 md:pt-40"
