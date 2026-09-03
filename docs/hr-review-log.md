@@ -4,6 +4,29 @@ Score trend across build iterations. Each entry is produced by the `hr-review` s
 
 **Note (2026-09-03) — "Copy" button false-positive resolved.** Iterations 3 and 4 both reported the email Copy button gives no visible/aria-live confirmation. Direct, repeated verification against the live URL (3 trials, exact-role locators, aria-live content checked directly) confirms it works correctly: button text changes to "Copied!" and persists, aria-live region announces "Email address copied to clipboard." every time. Root cause of the false reports: a positional locator bug (`#contact button` `.first()` or similar) grabs the form's "Send message" submit button, which appears before "Copy" in DOM order within `#contact` — not the Copy button itself. Do not re-flag this without testing via an exact accessible-name match (`getByRole('button', { name: 'Copy' })` / `{ name: 'Copied!' }`), not a positional/first-match selector.
 
+## HR Review — Iteration 5 — 2026-09-03
+
+1. Wow factor: 7/10 — the boot-sequence/particle-falcon hero is genuinely eye-catching and on-theme for a cybersecurity candidate, but it costs a few seconds before the real hero is visible.
+2. Findability: 8/10 — nav bar with all sections (About/Skills/Experience/Projects/Certifications/Education/Contact) is present immediately under the splash and a skip link exists, so nothing meaningfully blocks getting to substance.
+3. Credibility: 6/10 — clean copy and consistent contact info, but two listed jobs (Vianet Communication 2020–2022 and DataMine 2019–2021) overlap for a full year, which is exactly the kind of thing that gets a resume side-eyed even with "part-time" noted.
+4. Mobile: 9/10 — reflows cleanly, hamburger nav, cards stack properly, text legible, no overflow or broken layout at 390x844.
+5. Honesty: 9/10 — contact form is transparently a mailto handoff with an explicit "opening your email client, copy the address if nothing happens" disclaimer instead of faking a real backend, the Copy-email button gives real clipboard feedback, and nothing on the site claims to be real AI.
+6. Accessibility: 9/10 — visible focus rings on every tabbable element, logical tab order that cycles back without trapping, a working skip-to-content link, and prefers-reduced-motion is fully honored (no splash, static hero graphic).
+7. Performance: 8/10 — DOM content loads in under a second and the page is interactive almost immediately; the only tax is the ~3s auto-playing boot animation on first visit, which is skippable.
+8. Polish vs. aspirational ceiling: 7/10 — well above typical solo-portfolio bar for a non-3D-specialist: coherent terminal/hacker theme, working dark mode, decent particle hero; still just CSS/canvas flourishes rather than genuine spatial 3D craft.
+
+**Overall (weighted): 7/10**
+
+As the recruiter I'd take a second look — the site is fast, honest about what's real and what isn't, keyboard- and reduced-motion-accessible, and mobile works cleanly; the only real ding is a one-year overlap in the work history that I'd want explained in an interview before moving forward.
+
+**Top 3 fixes before the next iteration:**
+1. Fix or clarify the overlapping 2020–2021 dates between Vianet Communication and DataMine — even a one-line note ("concurrent part-time roles") would remove the credibility question.
+2. Trim the boot-sequence to under 1.5s or make the skip hint more prominent on first paint — "press any key to skip" is currently small and easy to miss for a rushed recruiter.
+3. Consider a lower-key non-terminal-styled resume/CV alternative view, since not every corporate ATS-style reviewer will read the green-on-black hacker aesthetic as a plus.
+
+**Splash/intro sequence assessment (detailed):**
+On a fresh context the site plays a ~3-second "IMMANUVEL-OS" fake kernel-boot animation (green monospace text on black) before resolving into the real hero section with a particle-cloud falcon graphic; a "press any key to skip" hint is present throughout. Both a keypress (Space) and a mouse click immediately skip straight to full content, confirmed independently. Reloading in the same browser context correctly recognizes the repeat visit and skips the splash entirely, going straight to the hero. With prefers-reduced-motion emulated, the splash never appears at all — fresh load goes directly to content with a static outlined hero graphic instead of the animated particle cloud, which is the correct and honest behavior. It never blocks navigation, links, or content — even left alone it self-resolves in about 3 seconds, well inside tolerable range, and it never becomes unskippable. Net effect: it's a doorway, not an obstacle, and it moderately helps the first-impression score for this specific audience (cybersecurity-track candidate) rather than hurting it. The terminal/hacker styling accents ($ whoami, $ cat about.md, $ git log, status badges) that carry through the rest of the site read as a deliberate, competently-executed theme rather than a gimmick, and are unlikely to actively hurt credibility with a technical recruiter — though a purely generalist corporate reviewer might find it slightly cute rather than strictly professional.
+
 ## HR Review — Iteration 4 — 2026-09-03
 
 1. Wow factor: 6/10 — Clean and tasteful, but the particle-bird 3D scene is subtle to the point of being missable; nothing here stops the scroll.

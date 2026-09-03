@@ -102,8 +102,8 @@ export function BootSequence({ onDone }: { onDone: () => void }) {
           <span className="cursor-blink">▌</span>
         )}
       </div>
-      <p className="absolute bottom-6 right-6 text-xs text-hacker-green-dim">
-        press any key to skip
+      <p className="absolute right-4 top-4 rounded border border-hacker-green-dim px-2.5 py-1 text-xs font-medium text-hacker-green sm:right-6 sm:top-6 sm:text-sm">
+        skip &gt;&gt; click or press any key
       </p>
     </div>
   )
