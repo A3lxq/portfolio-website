@@ -1,0 +1,69 @@
+@import '@fontsource/archivo/400.css';
+@import '@fontsource/archivo/500.css';
+@import '@fontsource/archivo/700.css';
+@import '@fontsource/archivo/900.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+.dc-root {
+  --dc-bg: #f5f4f0;
+  --dc-ink: #101010;
+  --dc-ink-soft: #55524c;
+  --dc-accent: #ff5a1f;
+  --dc-line: #101010;
+  --dc-display: 'Archivo', sans-serif;
+  --dc-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  background: var(--dc-bg);
+  color: var(--dc-ink);
+  font-family: var(--dc-display);
+  min-height: 100vh;
+}
+
+.dark .dc-root {
+  --dc-bg: #0c0c0b;
+  --dc-ink: #f2f0ea;
+  --dc-ink-soft: #a39d8f;
+  --dc-accent: #ff7a3d;
+  --dc-line: #f2f0ea;
+}
+
+.dc-mono {
+  font-family: var(--dc-mono);
+}
+
+.dc-rule {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: dc-rule-draw 0.6s var(--ease-snap) forwards;
+}
+
+@keyframes dc-rule-draw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.dc-cross {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+.dc-cross::before,
+.dc-cross::after {
+  content: '';
+  position: absolute;
+  background: var(--dc-line);
+}
+.dc-cross::before {
+  left: 5px;
+  top: 0;
+  width: 2px;
+  height: 12px;
+}
+.dc-cross::after {
+  top: 5px;
+  left: 0;
+  width: 12px;
+  height: 2px;
+}
