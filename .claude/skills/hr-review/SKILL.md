@@ -22,6 +22,8 @@ You are evaluating `github.com/A3lxq/portfolio-website` (Immanuvel Alex's person
 
 When testing an interactive element's confirmation/feedback state (e.g. a "Copied!" message), use an exact accessible-name locator (`getByRole('button', { name: 'Copy' })` before, `{ name: 'Copied!' }` after) — never a positional selector like `.first()` scoped to a section, since multiple buttons can share a container and a positional match can silently grab the wrong element, producing a false "no feedback" finding. If a check seems to fail, re-verify with a second, independent method (e.g. also read the aria-live region's text content directly) before reporting it as broken.
 
+**Specifically for the email Copy button**: this project has a documented history (see `docs/hr-review-log.md`) of both false "broken" reports (bad locators) and a false "confirmed working" claim (a check that didn't poll long enough). A rigorous re-test (exact locator, clipboard permissions granted, polled 50ms–5000ms after click, bisected against a clean pre-change baseline) found the underlying action is reliably correct — `navigator.clipboard.readText()` returns the right address every time — but the button's visible "Copied!" text does not reliably appear within headless Chromium/Playwright automation in this environment, and that gap predates any recent change (confirmed on an old baseline commit too). Treat `navigator.clipboard.readText()` as the authoritative signal for this specific feature, not the button's DOM text, and do not report it as visibly broken (or visibly fixed) based on a single quick check either way.
+
 ## Rubric (score each 1-10, no half-favors, write one blunt sentence per line)
 
 1. **First-impression wow factor** (5s, no scroll)
