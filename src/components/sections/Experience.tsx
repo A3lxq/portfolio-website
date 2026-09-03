@@ -3,7 +3,7 @@ import { experience } from '../../data/resume'
 
 export function Experience() {
   return (
-    <Section id="experience" title="Experience">
+    <Section id="experience" title="Experience" eyebrow="git log --author=immanuvel">
       <ol className="space-y-8 border-l border-neutral-200 pl-6 dark:border-neutral-800">
         {experience.map((entry) => (
           <li key={`${entry.org}-${entry.period}`} className="relative">

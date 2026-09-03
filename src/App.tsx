@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Nav } from './components/layout/Nav'
 import { Footer } from './components/layout/Footer'
 import { Hero } from './components/sections/Hero'
@@ -9,13 +10,16 @@ import { Certifications } from './components/sections/Certifications'
 import { Education } from './components/sections/Education'
 import { Contact } from './components/sections/Contact'
 import { FalconHero } from './components/hero/FalconHero'
+import { BootSequence } from './components/boot/BootSequence'
 import { useSmoothScroll } from './hooks/useSmoothScroll'
 
 function App() {
   useSmoothScroll()
+  const [booting, setBooting] = useState(true)
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <div className="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 scanlines">
+      {booting && <BootSequence onDone={() => setBooting(false)} />}
       <FalconHero />
       <a
         href="#main"

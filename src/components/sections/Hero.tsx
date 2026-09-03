@@ -7,8 +7,18 @@ export function Hero() {
       aria-label="Introduction"
       className="mx-auto flex max-w-5xl flex-col items-start px-6 pb-16 pt-20 md:pt-28"
     >
-      <p className="rounded-full border border-neutral-300 px-3 py-1 text-xs font-medium uppercase tracking-wide text-neutral-600 dark:border-neutral-700 dark:text-neutral-300">
-        Open to opportunities
+      <p
+        aria-hidden="true"
+        className="font-mono text-xs text-neutral-500 dark:text-neutral-500"
+      >
+        <span className="prompt-eyebrow">whoami</span>
+      </p>
+      <p className="mt-2 flex items-center gap-2 rounded-full border border-neutral-300 px-3 py-1 font-mono text-xs font-medium text-neutral-600 dark:border-neutral-700 dark:text-neutral-300">
+        <span
+          aria-hidden="true"
+          className="h-1.5 w-1.5 rounded-full bg-hacker-green cursor-blink"
+        />
+        STATUS: OPEN_TO_OPPORTUNITIES
       </p>
       <h1 className="mt-6 text-4xl font-semibold tracking-tight text-neutral-900 md:text-5xl dark:text-neutral-100">
         {profile.name}

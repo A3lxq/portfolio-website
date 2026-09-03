@@ -27,7 +27,7 @@ export function FalconFallback() {
         <path
           d="M100,54.5 L102.8,61.5 L112.25,66.75 L145.5,80.75 L184,98.25 L171.75,105.25 L135,101.75 L115.75,112.25 L114,131.5 L129.75,154.25 L110.5,143.75 L100,149 L89.5,143.75 L70.25,154.25 L86,131.5 L84.25,112.25 L65,101.75 L28.25,105.25 L16,98.25 L54.5,80.75 L87.75,66.75 L97.2,61.5 Z"
           fill="none"
-          stroke="#5eead4"
+          stroke="#39ff88"
           strokeWidth="1.4"
           strokeLinejoin="round"
           filter="url(#falcon-glow)"

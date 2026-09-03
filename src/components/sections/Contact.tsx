@@ -56,7 +56,7 @@ export function Contact() {
   }
 
   return (
-    <Section id="contact" title="Contact">
+    <Section id="contact" title="Contact" eyebrow="./contact --secure">
       <div className="grid gap-8 md:grid-cols-2">
         <form onSubmit={handleSubmit} className="space-y-4" noValidate>
           <div>

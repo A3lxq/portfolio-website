@@ -3,7 +3,7 @@ import { certifications } from '../../data/resume'
 
 export function Certifications() {
   return (
-    <Section id="certifications" title="Certifications">
+    <Section id="certifications" title="Certifications" eyebrow="cat certifications.log">
       <ul className="grid gap-3 sm:grid-cols-2">
         {certifications.map((cert) => (
           <li

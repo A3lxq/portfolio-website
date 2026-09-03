@@ -3,7 +3,7 @@ import { education } from '../../data/resume'
 
 export function Education() {
   return (
-    <Section id="education" title="Education" tinted>
+    <Section id="education" title="Education" eyebrow="cat education.log" tinted>
       <div className="space-y-6">
         {education.map((entry) => (
           <div key={entry.school}>

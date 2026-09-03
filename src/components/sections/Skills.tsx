@@ -3,7 +3,7 @@ import { skillGroups } from '../../data/resume'
 
 export function Skills() {
   return (
-    <Section id="skills" title="Skills" tinted>
+    <Section id="skills" title="Skills" eyebrow="ls -la ./skills" tinted>
       <div className="grid gap-4 sm:grid-cols-2">
         {skillGroups.map((group) => (
           <div

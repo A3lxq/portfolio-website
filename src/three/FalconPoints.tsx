@@ -49,7 +49,7 @@ export type FalconPointsHandle = {
 
 export function FalconPoints({
   progressRef,
-  color = '#5eead4',
+  color = '#39ff88',
 }: {
   progressRef: React.MutableRefObject<number>
   color?: string
