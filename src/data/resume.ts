@@ -78,7 +78,7 @@ export const experience: ExperienceEntry[] = [
     org: 'Vianet Communication',
     period: '2020 — 2022',
     bullets: [
-      'Held concurrently with the DataMine role below — two part-time technician positions overlapping 2020–2021, not a scheduling error.',
+      'Held concurrently with the part-time DataMine role below, both technician positions in 2020–2021.',
       'Diagnosed and resolved hardware and network issues to improve system performance and uptime.',
       'Installed, configured, and maintained computer systems, peripherals, and network infrastructure.',
     ],
