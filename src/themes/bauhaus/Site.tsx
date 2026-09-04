@@ -1,7 +1,7 @@
 import './styles.css'
 import { buildThemeSite } from '../shared/ThemeKit'
 
-export default buildThemeSite({
+const Site = buildThemeSite({
   themeClass: 'theme-bauhaus',
   background: (
     <div className="bh-shapes" aria-hidden="true">
@@ -12,3 +12,5 @@ export default buildThemeSite({
   ),
   eyebrow: 'Open to opportunities',
 })
+
+export default Site

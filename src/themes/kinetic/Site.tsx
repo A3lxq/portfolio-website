@@ -4,7 +4,7 @@ import { profile } from '../../data/resume'
 
 const marqueeText = `${profile.name} — ${profile.tagline} — `
 
-export default buildThemeSite({
+const Site = buildThemeSite({
   themeClass: 'theme-kinetic',
   background: (
     <div className="kn-marquee" aria-hidden="true">
@@ -13,3 +13,5 @@ export default buildThemeSite({
   ),
   eyebrow: 'Open to opportunities',
 })
+
+export default Site

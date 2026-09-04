@@ -1,7 +1,7 @@
 import './styles.css'
 import { buildThemeSite } from '../shared/ThemeKit'
 
-export default buildThemeSite({
+const Site = buildThemeSite({
   themeClass: 'theme-neubrutalism',
   background: (
     <>
@@ -11,3 +11,5 @@ export default buildThemeSite({
   ),
   eyebrow: 'Open to opportunities',
 })
+
+export default Site

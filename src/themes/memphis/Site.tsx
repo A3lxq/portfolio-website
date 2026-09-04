@@ -1,7 +1,7 @@
 import './styles.css'
 import { buildThemeSite } from '../shared/ThemeKit'
 
-export default buildThemeSite({
+const Site = buildThemeSite({
   themeClass: 'theme-memphis',
   background: (
     <div className="mm-shapes" aria-hidden="true">
@@ -13,3 +13,5 @@ export default buildThemeSite({
   ),
   eyebrow: 'Open to opportunities',
 })
+
+export default Site
