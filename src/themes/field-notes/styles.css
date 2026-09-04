@@ -57,6 +57,28 @@
   animation: fn-breathe 3.6s ease-in-out infinite;
 }
 
+/* Paper grain photo: "Plain beige cardboard or recycled paper texture"
+   by Kiwihug on Unsplash (unsplash.com/photos/qv05FvdE26k), Unsplash
+   License. Grayscale-filtered + blend-mode so the tone comes from
+   --fn-bg/--fn-ink, not the source photo's own color. */
+.fn-photo-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('./assets/paper-grain.webp');
+  background-repeat: repeat;
+  background-size: 340px;
+  filter: grayscale(1) contrast(1.05);
+  mix-blend-mode: multiply;
+  opacity: 0.16;
+}
+
+.dark .fn-photo-grain {
+  mix-blend-mode: soft-light;
+  opacity: 0.22;
+}
+
 .fn-grain::before {
   content: '';
   position: fixed;

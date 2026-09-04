@@ -15,6 +15,7 @@ import {
 export default function Site() {
   return (
     <div className="dc-root min-h-screen">
+      <div aria-hidden="true" className="dc-photo-grid" />
       <a
         href="#main"
         className="dc-mono sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:border-2 focus:border-[var(--dc-line)] focus:bg-[var(--dc-bg)] focus:px-4 focus:py-2 focus:text-xs focus:uppercase"

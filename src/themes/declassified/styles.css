@@ -90,6 +90,30 @@
   opacity: 0.15;
 }
 
+/* Blueprint/drafting grid photo: "Dark blue abstract background with
+   grid lines" by Claudio Guglieri on Unsplash
+   (unsplash.com/photos/gb37v81_Ni4), Unsplash License. Grayscale-
+   filtered + blend-mode so the tone comes from --dc-bg/--dc-line, not
+   the source photo's own blue. */
+.dc-photo-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('./assets/grid-texture.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 20%;
+  filter: grayscale(1) contrast(1.15);
+  mix-blend-mode: multiply;
+  opacity: 0.14;
+}
+
+.dark .dc-photo-grid {
+  mix-blend-mode: screen;
+  opacity: 0.16;
+}
+
 .dc-cross {
   position: absolute;
   width: 12px;

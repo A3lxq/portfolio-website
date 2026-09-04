@@ -15,6 +15,7 @@ import {
 export default function Site() {
   return (
     <div className="cs-root min-h-screen">
+      <div aria-hidden="true" className="cs-photo-mesh" />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-[var(--cs-accent)] focus:px-4 focus:py-2 focus:text-white"
