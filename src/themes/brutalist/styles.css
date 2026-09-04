@@ -1,0 +1,60 @@
+@import '../shared/kit-base.css';
+
+.theme-brutalist {
+  --t-bg: #ffffff;
+  --t-ink: #000000;
+  --t-ink-soft: #2a2a2a;
+  --t-accent: #ff0000;
+  --t-accent-2: #0000ff;
+  --t-accent-3: #ffff00;
+  --t-display: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --t-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --t-mono: ui-monospace, 'SF Mono', 'Courier New', monospace;
+}
+
+.dark .theme-brutalist {
+  --t-bg: #000000;
+  --t-ink: #ffffff;
+  --t-ink-soft: #d9d9d9;
+  --t-accent: #ff4d4d;
+  --t-accent-2: #4d7cff;
+  --t-accent-3: #ffff4d;
+}
+
+.theme-brutalist,
+.theme-brutalist * {
+  transition: none !important;
+}
+
+.theme-brutalist .t-display {
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.theme-brutalist .t-panel {
+  background: var(--t-bg);
+  border: 3px solid var(--t-ink);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-brutalist .t-panel-sm {
+  background: var(--t-accent-3);
+  color: #000;
+  border: 3px solid var(--t-ink);
+  border-radius: 0;
+}
+
+.theme-brutalist .t-dot {
+  border-radius: 0;
+}
+
+.theme-brutalist .bt-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(color-mix(in srgb, var(--t-ink) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--t-ink) 8%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}

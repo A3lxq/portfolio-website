@@ -1,0 +1,52 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/comfortaa/500.css';
+@import '@fontsource/comfortaa/700.css';
+@import '@fontsource/nunito-sans/400.css';
+@import '@fontsource/nunito-sans/600.css';
+
+.theme-skeuo {
+  --t-bg: #e8dcc8;
+  --t-ink: #2e2013;
+  --t-ink-soft: #6b5640;
+  --t-accent: #a3793f;
+  --t-display: 'Comfortaa', sans-serif;
+  --t-body: 'Nunito Sans', sans-serif;
+  --sk-shadow-dark: rgba(46, 32, 19, 0.35);
+  --sk-shadow-light: rgba(255, 250, 235, 0.7);
+}
+
+.dark .theme-skeuo {
+  --t-bg: #241a12;
+  --t-ink: #ecdfc7;
+  --t-ink-soft: #b7a488;
+  --t-accent: #d4af6a;
+  --sk-shadow-dark: rgba(0, 0, 0, 0.55);
+  --sk-shadow-light: rgba(255, 236, 190, 0.14);
+}
+
+.theme-skeuo .t-panel {
+  background: linear-gradient(155deg, color-mix(in srgb, var(--t-bg) 92%, white 8%), color-mix(in srgb, var(--t-bg) 88%, black 12%));
+  border-radius: 1rem;
+  box-shadow: 0 14px 28px var(--sk-shadow-dark), inset 0 1px 0 var(--sk-shadow-light), inset 0 -2px 6px var(--sk-shadow-dark);
+}
+
+.theme-skeuo .t-panel-sm {
+  background: linear-gradient(165deg, color-mix(in srgb, var(--t-bg) 96%, white 20%), color-mix(in srgb, var(--t-bg) 85%, black 10%));
+  border-radius: 0.6rem;
+  box-shadow: 0 6px 14px var(--sk-shadow-dark), inset 0 1px 0 var(--sk-shadow-light);
+}
+
+.theme-skeuo .t-panel-sm:active {
+  box-shadow: inset 0 2px 6px var(--sk-shadow-dark);
+}
+
+.theme-skeuo .sk-texture {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}

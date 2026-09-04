@@ -26,6 +26,18 @@ const THEME_ORDER = [
   'maximalism',
   'kinetic',
   'spatial',
+  'brutalist',
+  'aurora',
+  'skeuo',
+  'liquidglass',
+  'cyberpunk',
+  'exaggerated-minimal',
+  'parallax-story',
+  'gooey',
+  'zine',
+  'magazine',
+  'materialyou',
+  'fluent',
 ] as const
 type ThemeName = (typeof THEME_ORDER)[number]
 const STORAGE_KEY = 'site-theme-index'
@@ -56,6 +68,18 @@ const SITES: Record<ThemeName, ReturnType<typeof lazy>> = {
   maximalism: lazy(() => import('./themes/maximalism/Site')),
   kinetic: lazy(() => import('./themes/kinetic/Site')),
   spatial: lazy(() => import('./themes/spatial/Site')),
+  brutalist: lazy(() => import('./themes/brutalist/Site')),
+  aurora: lazy(() => import('./themes/aurora/Site')),
+  skeuo: lazy(() => import('./themes/skeuo/Site')),
+  liquidglass: lazy(() => import('./themes/liquidglass/Site')),
+  cyberpunk: lazy(() => import('./themes/cyberpunk/Site')),
+  'exaggerated-minimal': lazy(() => import('./themes/exaggerated-minimal/Site')),
+  'parallax-story': lazy(() => import('./themes/parallax-story/Site')),
+  gooey: lazy(() => import('./themes/gooey/Site')),
+  zine: lazy(() => import('./themes/zine/Site')),
+  magazine: lazy(() => import('./themes/magazine/Site')),
+  materialyou: lazy(() => import('./themes/materialyou/Site')),
+  fluent: lazy(() => import('./themes/fluent/Site')),
 }
 
 /**

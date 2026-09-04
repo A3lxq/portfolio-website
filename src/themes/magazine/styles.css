@@ -1,0 +1,50 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/pt-serif/400.css';
+@import '@fontsource/pt-serif/700.css';
+
+.theme-magazine {
+  --t-bg: #ffffff;
+  --t-ink: #111111;
+  --t-ink-soft: #55514c;
+  --t-accent: #b3121f;
+  --t-display: 'Playfair Display', serif;
+  --t-body: 'PT Serif', serif;
+}
+
+.dark .theme-magazine {
+  --t-bg: #121110;
+  --t-ink: #f2efe9;
+  --t-ink-soft: #b8b0a4;
+  --t-accent: #e34a55;
+}
+
+.theme-magazine .t-nav-wrap {
+  border-bottom: 3px double var(--t-ink);
+}
+
+.theme-magazine .t-display {
+  font-style: italic;
+}
+
+.theme-magazine .t-panel {
+  background: var(--t-bg);
+  border: none;
+  border-top: 3px solid var(--t-ink);
+  border-bottom: 1px solid color-mix(in srgb, var(--t-ink) 30%, transparent);
+  border-radius: 0;
+}
+
+.theme-magazine .t-panel-sm {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--t-accent);
+  border-radius: 0;
+}
+
+.theme-magazine .t-dot {
+  border-radius: 0;
+  width: 8px;
+  height: 8px;
+}

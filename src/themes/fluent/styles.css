@@ -1,0 +1,46 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/hanken-grotesk/400.css';
+@import '@fontsource/hanken-grotesk/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+.theme-fluent {
+  --t-bg: #f5f5f5;
+  --t-ink: #1b1a19;
+  --t-ink-soft: #605e5c;
+  --t-accent: #0078d4;
+  --t-display: 'Hanken Grotesk', sans-serif;
+  --t-body: 'Hanken Grotesk', sans-serif;
+  --fl-mono: 'JetBrains Mono', monospace;
+}
+
+.dark .theme-fluent {
+  --t-bg: #201f1e;
+  --t-ink: #f3f2f1;
+  --t-ink-soft: #c8c6c4;
+  --t-accent: #479ef5;
+}
+
+.theme-fluent .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 70%, white 10%);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 10%, transparent);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.theme-fluent .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 60%, white 15%);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 12%, transparent);
+  border-radius: 0.3rem;
+  font-family: var(--fl-mono);
+  font-size: 0.8em;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+.theme-fluent .t-panel-sm:hover {
+  background: radial-gradient(120px circle at 50% 0%, color-mix(in srgb, var(--t-accent) 18%, transparent), transparent 70%),
+    color-mix(in srgb, var(--t-bg) 60%, white 15%);
+}

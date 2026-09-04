@@ -1,0 +1,55 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/newsreader/500.css';
+@import '@fontsource/newsreader/600.css';
+@import '@fontsource/work-sans/400.css';
+@import '@fontsource/work-sans/500.css';
+
+.theme-parallax-story {
+  --t-bg: #f4f1ec;
+  --t-ink: #241f1a;
+  --t-ink-soft: #6b6156;
+  --t-accent: #b3542e;
+  --t-accent-2: #3a5a54;
+  --t-display: 'Newsreader', serif;
+  --t-body: 'Work Sans', sans-serif;
+}
+
+.dark .theme-parallax-story {
+  --t-bg: #16130f;
+  --t-ink: #f1ece2;
+  --t-ink-soft: #b3a89a;
+  --t-accent: #e08256;
+  --t-accent-2: #6fa89c;
+}
+
+.theme-parallax-story .t-panel {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 12%, transparent);
+  border-radius: 0.5rem;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+.theme-parallax-story .t-panel-sm {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 18%, transparent);
+  border-radius: 0.4rem;
+}
+
+.theme-parallax-story .px-layer {
+  position: fixed;
+  inset: -20% 0 auto 0;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.theme-parallax-story .px-layer-1 {
+  height: 60vh;
+  background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--t-accent) 22%, transparent), transparent 60%);
+}
+
+.theme-parallax-story .px-layer-2 {
+  height: 70vh;
+  top: 30%;
+  background: radial-gradient(circle at 80% 40%, color-mix(in srgb, var(--t-accent-2) 20%, transparent), transparent 60%);
+}

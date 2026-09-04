@@ -1,0 +1,45 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/libre-franklin/400.css';
+@import '@fontsource/libre-franklin/900.css';
+
+.theme-exaggerated-minimal {
+  --t-bg: #ffffff;
+  --t-ink: #000000;
+  --t-ink-soft: #666666;
+  --t-accent: #ff3d00;
+  --t-display: 'Libre Franklin', sans-serif;
+  --t-body: 'Libre Franklin', sans-serif;
+}
+
+.dark .theme-exaggerated-minimal {
+  --t-bg: #000000;
+  --t-ink: #ffffff;
+  --t-ink-soft: #a3a3a3;
+  --t-accent: #ff6a3d;
+}
+
+.theme-exaggerated-minimal .t-hero-title {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  font-size: clamp(3rem, 10vw, 12rem);
+  line-height: 0.9;
+}
+
+.theme-exaggerated-minimal .t-panel {
+  background: var(--t-bg);
+  border: 1px solid var(--t-ink);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-exaggerated-minimal .t-panel-sm {
+  background: var(--t-bg);
+  border: 1px solid var(--t-ink);
+  border-radius: 0;
+}
+
+.theme-exaggerated-minimal .t-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

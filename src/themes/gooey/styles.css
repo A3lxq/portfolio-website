@@ -1,0 +1,86 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/grandstander/500.css';
+@import '@fontsource/grandstander/700.css';
+@import '@fontsource/nunito-sans/400.css';
+@import '@fontsource/nunito-sans/600.css';
+
+.theme-gooey {
+  --t-bg: #fdf1f6;
+  --t-ink: #3a2233;
+  --t-ink-soft: #8a6b81;
+  --t-accent: #ff6fb0;
+  --t-accent-2: #62c3e8;
+  --t-display: 'Grandstander', cursive;
+  --t-body: 'Nunito Sans', sans-serif;
+}
+
+.dark .theme-gooey {
+  --t-bg: #1c1420;
+  --t-ink: #f8e9f2;
+  --t-ink-soft: #c19cb7;
+  --t-accent: #ff8fc4;
+  --t-accent-2: #7fd4f2;
+}
+
+.theme-gooey .t-panel {
+  background: var(--t-bg);
+  border: 2px solid color-mix(in srgb, var(--t-accent) 45%, transparent);
+  border-radius: 42% 58% 56% 44% / 46% 42% 58% 54%;
+  box-shadow: 0 16px 30px color-mix(in srgb, var(--t-accent) 18%, transparent);
+  transition: border-radius 0.4s ease, transform 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.theme-gooey .t-panel:hover {
+  border-radius: 56% 44% 42% 58% / 54% 58% 42% 46%;
+}
+
+.theme-gooey .t-panel-sm {
+  background: color-mix(in srgb, var(--t-accent-2) 16%, var(--t-bg));
+  border: 2px solid color-mix(in srgb, var(--t-accent-2) 50%, transparent);
+  border-radius: 999px;
+  transition: transform 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55), border-radius 0.3s ease;
+}
+
+.theme-gooey .t-panel-sm:hover {
+  transform: scale(1.06);
+  border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
+}
+
+.theme-gooey .t-panel-sm:active {
+  transform: scale(0.92);
+}
+
+.theme-gooey .t-dot {
+  border-radius: 50%;
+}
+
+.theme-gooey .go-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.theme-gooey .go-blobs span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+}
+
+.theme-gooey .go-blobs span:nth-child(1) {
+  width: 340px;
+  height: 340px;
+  top: -60px;
+  right: -60px;
+  background: var(--t-accent);
+}
+
+.theme-gooey .go-blobs span:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: -60px;
+  background: var(--t-accent-2);
+}

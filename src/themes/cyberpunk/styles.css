@@ -1,0 +1,60 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/rajdhani/500.css';
+@import '@fontsource/rajdhani/700.css';
+@import '@fontsource/share-tech-mono/400.css';
+
+.theme-cyberpunk {
+  --t-bg: #0a0a0d;
+  --t-ink: #e8fff5;
+  --t-ink-soft: #7fa89a;
+  --t-accent: #00ff9f;
+  --t-accent-2: #ff00e5;
+  --t-display: 'Rajdhani', sans-serif;
+  --t-body: 'Share Tech Mono', monospace;
+}
+
+.dark .theme-cyberpunk {
+  --t-bg: #050506;
+  --t-ink: #edfff7;
+  --t-ink-soft: #7fa89a;
+  --t-accent: #39ffb0;
+  --t-accent-2: #ff33ec;
+}
+
+.theme-cyberpunk .t-display {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.theme-cyberpunk .t-hero-title {
+  text-shadow: 0 0 8px color-mix(in srgb, var(--t-accent) 70%, transparent), 0 0 24px color-mix(in srgb, var(--t-accent) 40%, transparent);
+}
+
+.theme-cyberpunk .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 92%, var(--t-accent) 8%);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 55%, transparent);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 18px color-mix(in srgb, var(--t-accent) 22%, transparent);
+}
+
+.theme-cyberpunk .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 90%, var(--t-accent-2) 10%);
+  border: 1px solid color-mix(in srgb, var(--t-accent-2) 60%, transparent);
+  border-radius: 0.2rem;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--t-accent-2) 25%, transparent);
+}
+
+.theme-cyberpunk .cp-scan {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(0deg, rgba(0, 255, 159, 0.035) 0px, rgba(0, 255, 159, 0.035) 1px, transparent 1px, transparent 3px);
+}
+
+.theme-cyberpunk .cp-scan::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, color-mix(in srgb, var(--t-accent-2) 12%, transparent), transparent 60%);
+}

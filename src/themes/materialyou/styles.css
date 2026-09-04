@@ -1,0 +1,44 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/roboto-flex/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/700.css';
+
+.theme-materialyou {
+  --t-bg: #fef7ff;
+  --t-ink: #1d1b20;
+  --t-ink-soft: #49454f;
+  --t-accent: #6750a4;
+  --t-accent-2: #e8def8;
+  --t-display: 'Be Vietnam Pro', sans-serif;
+  --t-body: 'Roboto Flex', sans-serif;
+}
+
+.dark .theme-materialyou {
+  --t-bg: #141218;
+  --t-ink: #e6e0e9;
+  --t-ink-soft: #cac4d0;
+  --t-accent: #d0bcff;
+  --t-accent-2: #4a4458;
+}
+
+.theme-materialyou .t-panel {
+  background: color-mix(in srgb, var(--t-accent-2) 55%, var(--t-bg));
+  border: none;
+  border-radius: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.theme-materialyou .t-panel-sm {
+  background: color-mix(in srgb, var(--t-accent-2) 65%, var(--t-bg));
+  border: none;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.theme-materialyou .t-panel-sm:hover {
+  background: color-mix(in srgb, var(--t-accent) 20%, var(--t-accent-2));
+}
+
+.theme-materialyou .t-dot {
+  border-radius: 50%;
+}
