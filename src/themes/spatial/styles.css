@@ -1,0 +1,54 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/instrument-sans/400.css';
+@import '@fontsource/instrument-sans/500.css';
+@import '@fontsource/instrument-sans/600.css';
+
+.theme-spatial {
+  --t-bg: #eef1f6;
+  --t-ink: #1b2130;
+  --t-ink-soft: #5b6478;
+  --t-accent: #6d8cff;
+  --t-accent-2: #ff8ac1;
+  --t-display: 'Instrument Sans', sans-serif;
+  --t-body: 'Instrument Sans', sans-serif;
+}
+
+.dark .theme-spatial {
+  --t-bg: #0f1220;
+  --t-ink: #eef1f6;
+  --t-ink-soft: #a4acc4;
+  --t-accent: #93aeff;
+  --t-accent-2: #ffa6d4;
+}
+
+.theme-spatial .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 88%, white 12%);
+  border: 1px solid color-mix(in srgb, white 20%, transparent);
+  border-radius: 1.75rem;
+  box-shadow: -14px -14px 34px color-mix(in srgb, var(--t-accent) 12%, transparent),
+    14px 14px 34px color-mix(in srgb, var(--t-accent-2) 10%, transparent), 0 1px 0 color-mix(in srgb, white 30%, transparent) inset;
+}
+
+.dark .theme-spatial .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 85%, white 15%);
+}
+
+.theme-spatial .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 90%, white 10%);
+  border: 1px solid color-mix(in srgb, white 18%, transparent);
+  border-radius: 1rem;
+  box-shadow: -6px -6px 16px color-mix(in srgb, var(--t-accent) 10%, transparent), 6px 6px 16px color-mix(in srgb, var(--t-accent-2) 10%, transparent);
+}
+
+.theme-spatial .sp-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--px, 50%) var(--py, 30%),
+    color-mix(in srgb, var(--t-accent) 22%, transparent),
+    transparent 60%
+  );
+  transition: background-position 0.2s ease;
+}

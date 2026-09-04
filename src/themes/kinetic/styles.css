@@ -1,0 +1,73 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/archivo-black/400.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+.theme-kinetic {
+  --t-bg: #f2f2f0;
+  --t-ink: #101010;
+  --t-ink-soft: #4d4d4d;
+  --t-accent: #ff4b1f;
+  --t-display: 'Archivo Black', sans-serif;
+  --t-body: 'Inter', sans-serif;
+}
+
+.dark .theme-kinetic {
+  --t-bg: #0c0c0c;
+  --t-ink: #f2f2f0;
+  --t-ink-soft: #b3b3b3;
+  --t-accent: #ff7a4d;
+}
+
+.theme-kinetic .t-display {
+  letter-spacing: -0.01em;
+}
+
+.theme-kinetic .t-hero-title {
+  font-weight: 400;
+  font-size: clamp(3.5rem, 11vw, 8rem);
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.theme-kinetic .t-panel {
+  background: var(--t-bg);
+  border: 2px solid var(--t-ink);
+  border-radius: 0.5rem;
+}
+
+.theme-kinetic .t-panel-sm {
+  background: var(--t-bg);
+  border: 2px solid var(--t-ink);
+  border-radius: 999px;
+}
+
+.theme-kinetic .kn-marquee {
+  position: fixed;
+  inset: auto 0 8vh 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0.06;
+}
+
+.theme-kinetic .kn-marquee span {
+  display: inline-block;
+  font-family: var(--t-display);
+  font-weight: 400;
+  font-size: 14vw;
+  text-transform: uppercase;
+  padding-right: 4rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-kinetic .kn-marquee span {
+    animation: kn-scroll 22s linear infinite;
+  }
+}
+
+@keyframes kn-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

@@ -1,0 +1,62 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/audiowide/400.css';
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/600.css';
+
+.theme-vaporwave {
+  --t-bg: #fdeeff;
+  --t-ink: #2c1250;
+  --t-ink-soft: #6a4a8f;
+  --t-accent: #ff6ad5;
+  --t-accent-2: #8bd8ff;
+  --t-display: 'Audiowide', sans-serif;
+  --t-body: 'Montserrat', sans-serif;
+}
+
+.dark .theme-vaporwave {
+  --t-bg: #1a0b2e;
+  --t-ink: #f4e9ff;
+  --t-ink-soft: #c6aee0;
+  --t-accent: #ff8ade;
+  --t-accent-2: #7fe3ff;
+}
+
+.theme-vaporwave .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 70%, transparent);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 40%, transparent);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--t-accent-2) 30%, transparent), 0 12px 30px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.theme-vaporwave .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 65%, transparent);
+  border: 1px solid color-mix(in srgb, var(--t-accent-2) 45%, transparent);
+  border-radius: 0.4rem;
+}
+
+.theme-vaporwave .vw-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--t-accent-2) 0%, var(--t-accent) 55%, var(--t-bg) 100%);
+  opacity: 0.28;
+}
+
+.theme-vaporwave .vw-sky::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%;
+  background-image: linear-gradient(color-mix(in srgb, var(--t-ink) 40%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--t-ink) 40%, transparent) 1px, transparent 1px);
+  background-size: 48px 32px;
+  -webkit-mask-image: linear-gradient(180deg, transparent, black 60%);
+  mask-image: linear-gradient(180deg, transparent, black 60%);
+  transform: perspective(220px) rotateX(55deg);
+  transform-origin: bottom;
+}

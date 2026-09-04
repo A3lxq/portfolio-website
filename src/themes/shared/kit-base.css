@@ -1,0 +1,31 @@
+.t-root {
+  background: var(--t-bg);
+  color: var(--t-ink);
+  font-family: var(--t-body);
+  min-height: 100vh;
+  position: relative;
+}
+
+.t-display {
+  font-family: var(--t-display, var(--t-body));
+}
+
+.t-ink-soft {
+  color: var(--t-ink-soft);
+}
+
+.t-accent-text {
+  color: var(--t-accent);
+}
+
+.t-dot {
+  background: var(--t-accent);
+}
+
+.t-nav-link {
+  transition: color 0.15s ease;
+}
+
+.t-nav-link:hover {
+  color: var(--t-accent);
+}

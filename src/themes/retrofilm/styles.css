@@ -1,0 +1,51 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/special-elite/400.css';
+@import '@fontsource/crimson-text/400.css';
+@import '@fontsource/crimson-text/600.css';
+
+.theme-retrofilm {
+  --t-bg: #ece0c8;
+  --t-ink: #4a3728;
+  --t-ink-soft: #7a6248;
+  --t-accent: #8a4a2d;
+  --t-display: 'Special Elite', cursive;
+  --t-body: 'Crimson Text', serif;
+}
+
+.dark .theme-retrofilm {
+  --t-bg: #241d16;
+  --t-ink: #ecdfc7;
+  --t-ink-soft: #b6a488;
+  --t-accent: #d38a5f;
+}
+
+.theme-retrofilm .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 96%, var(--t-ink) 4%);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 30%, transparent);
+  border-radius: 0.15rem;
+  box-shadow: 0 10px 26px rgba(40, 26, 12, 0.18);
+}
+
+.theme-retrofilm .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 92%, var(--t-ink) 8%);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 35%, transparent);
+  border-radius: 0.15rem;
+}
+
+.theme-retrofilm .rf2-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+.theme-retrofilm .rf2-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 18vw rgba(40, 26, 12, 0.35);
+}

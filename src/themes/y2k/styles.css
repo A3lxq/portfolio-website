@@ -1,0 +1,63 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/chakra-petch/500.css';
+@import '@fontsource/chakra-petch/700.css';
+@import '@fontsource/rubik/400.css';
+@import '@fontsource/rubik/500.css';
+
+.theme-y2k {
+  --t-bg: #f3f6fb;
+  --t-ink: #1a2540;
+  --t-ink-soft: #5c6c8a;
+  --t-accent: #3ddbff;
+  --t-accent-2: #b9c4d6;
+  --t-display: 'Chakra Petch', sans-serif;
+  --t-body: 'Rubik', sans-serif;
+}
+
+.dark .theme-y2k {
+  --t-bg: #0c1424;
+  --t-ink: #eaf6ff;
+  --t-ink-soft: #9fb3d1;
+  --t-accent: #6be9ff;
+  --t-accent-2: #4a5b7a;
+}
+
+.theme-y2k .t-display {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.theme-y2k .t-panel {
+  position: relative;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--t-accent) 18%, var(--t-bg)) 0%, var(--t-bg) 40%);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 45%, transparent);
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 24px color-mix(in srgb, var(--t-accent) 20%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+.theme-y2k .t-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent);
+  pointer-events: none;
+}
+
+.theme-y2k .t-panel-sm {
+  position: relative;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--t-accent) 25%, var(--t-bg)) 0%, var(--t-bg) 60%);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 50%, transparent);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--t-accent) 25%, transparent);
+}
+
+.theme-y2k .y2k-chrome {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% -10%, color-mix(in srgb, var(--t-accent) 20%, transparent), transparent 45%),
+    radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--t-accent) 14%, transparent), transparent 45%);
+}

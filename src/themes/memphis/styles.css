@@ -1,0 +1,89 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/fredoka/500.css';
+@import '@fontsource/fredoka/700.css';
+@import '@fontsource/quicksand/400.css';
+@import '@fontsource/quicksand/600.css';
+
+.theme-memphis {
+  --t-bg: #ffffff;
+  --t-ink: #1a1a1a;
+  --t-ink-soft: #55555a;
+  --t-accent: #ff3b30;
+  --t-accent-2: #0080ff;
+  --t-accent-3: #ffcc00;
+  --t-display: 'Fredoka', sans-serif;
+  --t-body: 'Quicksand', sans-serif;
+}
+
+.dark .theme-memphis {
+  --t-bg: #17171a;
+  --t-ink: #f5f5f5;
+  --t-ink-soft: #b7b7bd;
+  --t-accent: #ff6b60;
+  --t-accent-2: #4da3ff;
+  --t-accent-3: #ffdd4d;
+}
+
+.theme-memphis .t-panel {
+  background: var(--t-bg);
+  border: 3px solid var(--t-ink);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 0 var(--t-accent-3);
+}
+
+.theme-memphis .t-panel-sm {
+  background: var(--t-bg);
+  border: 3px solid var(--t-ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--t-accent-2);
+}
+
+.theme-memphis .mm-shapes {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.theme-memphis .mm-shapes span {
+  position: absolute;
+  display: block;
+}
+
+.theme-memphis .mm-shapes span:nth-child(1) {
+  top: 10vh;
+  left: 8vw;
+  width: 40px;
+  height: 40px;
+  background: var(--t-accent);
+  border-radius: 50%;
+}
+
+.theme-memphis .mm-shapes span:nth-child(2) {
+  top: 20vh;
+  right: 10vw;
+  width: 0;
+  height: 0;
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-bottom: 44px solid var(--t-accent-2);
+}
+
+.theme-memphis .mm-shapes span:nth-child(3) {
+  bottom: 12vh;
+  left: 12vw;
+  width: 60px;
+  height: 14px;
+  background: var(--t-accent-3);
+  transform: rotate(-8deg);
+  border-radius: 999px;
+}
+
+.theme-memphis .mm-shapes span:nth-child(4) {
+  bottom: 22vh;
+  right: 8vw;
+  width: 34px;
+  height: 34px;
+  border: 5px solid var(--t-ink);
+  border-radius: 50%;
+}

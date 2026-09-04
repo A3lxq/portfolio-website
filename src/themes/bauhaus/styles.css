@@ -1,0 +1,84 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+
+.theme-bauhaus {
+  --t-bg: #f7f3ea;
+  --t-ink: #161311;
+  --t-ink-soft: #55504a;
+  --t-accent: #d7263d;
+  --t-accent-2: #ffce45;
+  --t-accent-3: #1c5cc7;
+  --t-display: 'Poppins', sans-serif;
+  --t-body: 'Poppins', sans-serif;
+}
+
+.dark .theme-bauhaus {
+  --t-bg: #17140f;
+  --t-ink: #f7f3ea;
+  --t-ink-soft: #cdc5b6;
+  --t-accent: #ff5468;
+  --t-accent-2: #ffd873;
+  --t-accent-3: #5b93ff;
+}
+
+.theme-bauhaus .t-panel {
+  background: var(--t-bg);
+  border: 2px solid var(--t-ink);
+  border-radius: 0;
+  border-top: 6px solid var(--t-accent);
+}
+
+.theme-bauhaus .t-panel-sm {
+  background: var(--t-bg);
+  border: 2px solid var(--t-ink);
+  border-radius: 0;
+}
+
+.theme-bauhaus .t-dot {
+  border-radius: 50%;
+  background: var(--t-accent-3);
+}
+
+.theme-bauhaus .bh-shapes {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.theme-bauhaus .bh-shapes span {
+  position: absolute;
+  display: block;
+}
+
+.theme-bauhaus .bh-shapes span:nth-child(1) {
+  top: 8vh;
+  right: 8vw;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: var(--t-accent);
+  opacity: 0.85;
+}
+
+.theme-bauhaus .bh-shapes span:nth-child(2) {
+  bottom: 10vh;
+  left: 6vw;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid var(--t-accent-3);
+  opacity: 0.85;
+}
+
+.theme-bauhaus .bh-shapes span:nth-child(3) {
+  top: 40vh;
+  right: 14vw;
+  width: 70px;
+  height: 70px;
+  background: var(--t-accent-2);
+  opacity: 0.85;
+}

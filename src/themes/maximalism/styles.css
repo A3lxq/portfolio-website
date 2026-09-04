@@ -1,0 +1,77 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/bungee/400.css';
+@import '@fontsource/mulish/400.css';
+@import '@fontsource/mulish/700.css';
+
+.theme-maximalism {
+  --t-bg: #ffffff;
+  --t-ink: #0a0a0a;
+  --t-ink-soft: #3d3d3d;
+  --t-accent: #ff2fb0;
+  --t-accent-2: #23e0c8;
+  --t-accent-3: #ffe600;
+  --t-display: 'Bungee', sans-serif;
+  --t-body: 'Mulish', sans-serif;
+}
+
+.dark .theme-maximalism {
+  --t-bg: #0a0a0a;
+  --t-ink: #ffffff;
+  --t-ink-soft: #d1d1d1;
+  --t-accent: #ff6ad0;
+  --t-accent-2: #4dfff0;
+  --t-accent-3: #fff066;
+}
+
+.theme-maximalism .t-panel {
+  background: var(--t-bg);
+  border: 3px solid var(--t-ink);
+  border-radius: 0.5rem;
+  box-shadow: 6px 6px 0 var(--t-accent), 12px 12px 0 var(--t-accent-2);
+}
+
+.theme-maximalism .t-panel-sm {
+  background: var(--t-accent-3);
+  color: var(--t-ink);
+  border: 3px solid var(--t-ink);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--t-accent);
+  transform: rotate(-1.5deg);
+}
+
+.theme-maximalism .t-panel-sm:hover {
+  transform: rotate(0deg);
+}
+
+.theme-maximalism .mx-stickers {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.theme-maximalism .mx-stickers span {
+  position: absolute;
+  padding: 0.4rem 0.9rem;
+  font-family: var(--t-display);
+  font-size: 0.7rem;
+  border: 3px solid var(--t-ink);
+  border-radius: 999px;
+  background: var(--t-accent-2);
+  color: var(--t-ink);
+  box-shadow: 4px 4px 0 var(--t-ink);
+}
+
+.theme-maximalism .mx-stickers span:nth-child(1) {
+  top: 10vh;
+  right: 8vw;
+  transform: rotate(8deg);
+  background: var(--t-accent);
+}
+
+.theme-maximalism .mx-stickers span:nth-child(2) {
+  bottom: 14vh;
+  left: 6vw;
+  transform: rotate(-10deg);
+  background: var(--t-accent-3);
+}

@@ -1,0 +1,80 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/bebas-neue/400.css';
+@import '@fontsource/josefin-sans/400.css';
+@import '@fontsource/josefin-sans/600.css';
+
+.theme-retro-futurism {
+  --t-bg: #f5ead9;
+  --t-ink: #3b2a20;
+  --t-ink-soft: #7a5f4c;
+  --t-accent: #e8622c;
+  --t-accent-2: #1b8a8a;
+  --t-display: 'Bebas Neue', sans-serif;
+  --t-body: 'Josefin Sans', sans-serif;
+}
+
+.dark .theme-retro-futurism {
+  --t-bg: #241a14;
+  --t-ink: #f5ead9;
+  --t-ink-soft: #cdb49d;
+  --t-accent: #ff8552;
+  --t-accent-2: #3fd6d6;
+}
+
+.theme-retro-futurism .t-display {
+  letter-spacing: 0.03em;
+}
+
+.theme-retro-futurism .t-panel {
+  background: var(--t-bg);
+  border: 3px solid var(--t-ink);
+  border-radius: 0.25rem;
+  box-shadow: 6px 6px 0 var(--t-accent-2);
+}
+
+.theme-retro-futurism .t-panel-sm {
+  background: var(--t-bg);
+  border: 2px solid var(--t-ink);
+  border-radius: 0.25rem;
+  box-shadow: 4px 4px 0 var(--t-accent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-retro-futurism .t-panel-sm:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--t-accent);
+}
+
+.theme-retro-futurism .rf-sunburst {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.theme-retro-futurism .rf-sunburst::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -35vw;
+  width: 90vw;
+  height: 90vw;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    var(--t-accent) 0deg 6deg,
+    transparent 6deg 12deg
+  );
+  -webkit-mask-image: radial-gradient(circle, black 55%, transparent 75%);
+  mask-image: radial-gradient(circle, black 55%, transparent 75%);
+}
+
+.theme-retro-futurism .rf-stripe {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--t-accent), var(--t-accent-2));
+  margin-top: 1.5rem;
+  max-width: 12rem;
+}

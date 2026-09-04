@@ -1,0 +1,86 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/baloo-2/500.css';
+@import '@fontsource/baloo-2/700.css';
+@import '@fontsource/nunito/400.css';
+@import '@fontsource/nunito/600.css';
+
+.theme-claymorphism {
+  --t-bg: #fef6f0;
+  --t-ink: #4a3b35;
+  --t-ink-soft: #8a7268;
+  --t-accent: #ff8a65;
+  --t-accent-2: #4dd0b1;
+  --t-display: 'Baloo 2', sans-serif;
+  --t-body: 'Nunito', sans-serif;
+  --cm-shadow-light: rgba(255, 255, 255, 0.85);
+  --cm-shadow-dark: rgba(214, 172, 148, 0.45);
+}
+
+.dark .theme-claymorphism {
+  --t-bg: #2e2420;
+  --t-ink: #f5e9e2;
+  --t-ink-soft: #c9b3a8;
+  --t-accent: #ffab8f;
+  --t-accent-2: #6fe3c4;
+  --cm-shadow-light: rgba(80, 62, 54, 0.6);
+  --cm-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+.theme-claymorphism .t-panel {
+  background: var(--t-bg);
+  border-radius: 2rem;
+  box-shadow:
+    -8px -8px 18px var(--cm-shadow-light),
+    10px 10px 22px var(--cm-shadow-dark),
+    inset 1px 1px 2px var(--cm-shadow-light);
+}
+
+.theme-claymorphism .t-panel-sm {
+  background: var(--t-bg);
+  border-radius: 1.25rem;
+  box-shadow:
+    -5px -5px 10px var(--cm-shadow-light),
+    6px 6px 14px var(--cm-shadow-dark);
+  transition: transform 0.2s ease;
+}
+
+.theme-claymorphism .t-panel-sm:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.theme-claymorphism .t-dot {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--t-accent) 25%, transparent);
+}
+
+.theme-claymorphism .cm-blob {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.theme-claymorphism .cm-blob::before,
+.theme-claymorphism .cm-blob::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+}
+
+.theme-claymorphism .cm-blob::before {
+  width: 420px;
+  height: 420px;
+  top: -120px;
+  right: -80px;
+  background: var(--t-accent);
+}
+
+.theme-claymorphism .cm-blob::after {
+  width: 380px;
+  height: 380px;
+  bottom: -140px;
+  left: -100px;
+  background: var(--t-accent-2);
+}

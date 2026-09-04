@@ -1,0 +1,78 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/anton/400.css';
+@import '@fontsource/dm-sans/400.css';
+@import '@fontsource/dm-sans/700.css';
+
+.theme-neubrutalism {
+  --t-bg: #fdf6e9;
+  --t-ink: #101010;
+  --t-ink-soft: #3a3a3a;
+  --t-accent: #ff3ea5;
+  --t-accent-2: #ffde59;
+  --t-display: 'Anton', sans-serif;
+  --t-body: 'DM Sans', sans-serif;
+}
+
+.dark .theme-neubrutalism {
+  --t-bg: #16140f;
+  --t-ink: #fdf6e9;
+  --t-ink-soft: #cfc6b4;
+  --t-accent: #ff6fc0;
+  --t-accent-2: #ffe98a;
+}
+
+.theme-neubrutalism .t-display {
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.theme-neubrutalism .t-panel {
+  background: var(--t-bg);
+  border: 3px solid var(--t-ink);
+  border-radius: 0;
+  box-shadow: 7px 7px 0 var(--t-ink);
+}
+
+.theme-neubrutalism .t-panel-sm {
+  background: var(--t-accent-2);
+  color: var(--t-ink);
+  border: 3px solid var(--t-ink);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--t-ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.theme-neubrutalism .t-panel-sm:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--t-ink);
+}
+
+.theme-neubrutalism .t-dot {
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+.theme-neubrutalism .nb-block {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  border: 3px solid var(--t-ink);
+}
+
+.theme-neubrutalism .nb-block--1 {
+  top: 8vh;
+  right: 6vw;
+  width: 90px;
+  height: 90px;
+  background: var(--t-accent);
+  transform: rotate(12deg);
+}
+
+.theme-neubrutalism .nb-block--2 {
+  bottom: 10vh;
+  left: 5vw;
+  width: 70px;
+  height: 70px;
+  background: var(--t-accent-2);
+  border-radius: 50%;
+}

@@ -1,0 +1,55 @@
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/500.css';
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
+
+.nm-root {
+  --nm-bg: #e6ebf1;
+  --nm-ink: #3a3f47;
+  --nm-ink-soft: #6b7280;
+  --nm-accent: #5b6ee1;
+  --nm-shadow-light: #ffffff;
+  --nm-shadow-dark: #a3b1c6;
+  --nm-font: 'Manrope', sans-serif;
+  background: var(--nm-bg);
+  color: var(--nm-ink);
+  font-family: var(--nm-font);
+  min-height: 100vh;
+}
+
+.dark .nm-root {
+  --nm-bg: #2b2f38;
+  --nm-ink: #e5e9f0;
+  --nm-ink-soft: #9aa3b2;
+  --nm-accent: #8b9bff;
+  --nm-shadow-light: #383d47;
+  --nm-shadow-dark: #1c1f26;
+}
+
+.nm-raised {
+  background: var(--nm-bg);
+  border-radius: 1.25rem;
+  box-shadow: 8px 8px 16px var(--nm-shadow-dark), -8px -8px 16px var(--nm-shadow-light);
+}
+
+.nm-pressed {
+  background: var(--nm-bg);
+  border-radius: 1.25rem;
+  box-shadow: inset 5px 5px 10px var(--nm-shadow-dark), inset -5px -5px 10px var(--nm-shadow-light);
+}
+
+.nm-raised-sm {
+  background: var(--nm-bg);
+  border-radius: 0.75rem;
+  box-shadow: 4px 4px 8px var(--nm-shadow-dark), -4px -4px 8px var(--nm-shadow-light);
+  transition: box-shadow 0.2s ease-snap, transform 0.2s ease-snap;
+}
+
+.nm-raised-sm:hover {
+  box-shadow: 2px 2px 5px var(--nm-shadow-dark), -2px -2px 5px var(--nm-shadow-light);
+}
+
+.nm-raised-sm:active,
+.nm-pressable:active {
+  box-shadow: inset 3px 3px 6px var(--nm-shadow-dark), inset -3px -3px 6px var(--nm-shadow-light);
+}

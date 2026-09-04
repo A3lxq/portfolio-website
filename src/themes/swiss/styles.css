@@ -1,0 +1,41 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/ibm-plex-sans/400.css';
+@import '@fontsource/ibm-plex-sans/500.css';
+@import '@fontsource/ibm-plex-sans/700.css';
+
+.theme-swiss {
+  --t-bg: #ffffff;
+  --t-ink: #111111;
+  --t-ink-soft: #4d4d4d;
+  --t-accent: #e30613;
+  --t-display: 'IBM Plex Sans', sans-serif;
+  --t-body: 'IBM Plex Sans', sans-serif;
+}
+
+.dark .theme-swiss {
+  --t-bg: #0d0d0d;
+  --t-ink: #f5f5f5;
+  --t-ink-soft: #b3b3b3;
+  --t-accent: #ff4550;
+}
+
+.theme-swiss .t-display {
+  letter-spacing: -0.01em;
+}
+
+.theme-swiss .t-panel {
+  background: var(--t-bg);
+  border: 1px solid var(--t-ink);
+  border-radius: 0;
+  border-top: 4px solid var(--t-accent);
+}
+
+.theme-swiss .t-panel-sm {
+  background: var(--t-bg);
+  border: 1px solid var(--t-ink);
+  border-radius: 0;
+}
+
+.theme-swiss .t-dot {
+  border-radius: 0;
+}

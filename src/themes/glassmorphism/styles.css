@@ -1,0 +1,67 @@
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+.gl-root {
+  --gl-bg-1: #dbeafe;
+  --gl-bg-2: #fce7f3;
+  --gl-bg-3: #e0e7ff;
+  --gl-ink: #1e293b;
+  --gl-ink-soft: #475569;
+  --gl-accent: #6366f1;
+  --gl-panel: rgba(255, 255, 255, 0.45);
+  --gl-panel-border: rgba(255, 255, 255, 0.6);
+  --gl-display: 'Space Grotesk', sans-serif;
+  --gl-body: 'Inter', sans-serif;
+  background: var(--gl-bg-1);
+  color: var(--gl-ink);
+  font-family: var(--gl-body);
+  min-height: 100vh;
+  position: relative;
+}
+
+.dark .gl-root {
+  --gl-bg-1: #1e1b4b;
+  --gl-bg-2: #3b0764;
+  --gl-bg-3: #082f49;
+  --gl-ink: #f1f5f9;
+  --gl-ink-soft: #cbd5e1;
+  --gl-accent: #a5b4fc;
+  --gl-panel: rgba(15, 15, 35, 0.4);
+  --gl-panel-border: rgba(255, 255, 255, 0.14);
+}
+
+.gl-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 20%, var(--gl-bg-2) 0%, transparent 55%),
+    radial-gradient(circle at 85% 30%, var(--gl-bg-3) 0%, transparent 55%),
+    radial-gradient(circle at 50% 90%, var(--gl-bg-1) 0%, transparent 60%),
+    var(--gl-bg-1);
+}
+
+.gl-panel {
+  background: var(--gl-panel);
+  border: 1px solid var(--gl-panel-border);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
+}
+
+.gl-panel-sm {
+  background: var(--gl-panel);
+  border: 1px solid var(--gl-panel-border);
+  border-radius: 0.9rem;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.gl-content {
+  position: relative;
+  z-index: 1;
+}

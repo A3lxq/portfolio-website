@@ -1,0 +1,47 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/700.css';
+
+.theme-bento {
+  --t-bg: #f5f5f7;
+  --t-ink: #1d1d1f;
+  --t-ink-soft: #6e6e73;
+  --t-accent: #10b981;
+  --t-display: 'Inter', sans-serif;
+  --t-body: 'Inter', sans-serif;
+  --bt-panel-bg: #ffffff;
+  --bt-ring: rgba(0, 0, 0, 0.06);
+}
+
+.dark .theme-bento {
+  --t-bg: #0b0b0d;
+  --t-ink: #f5f5f7;
+  --t-ink-soft: #a1a1a6;
+  --t-accent: #34d399;
+  --bt-panel-bg: #18181b;
+  --bt-ring: rgba(255, 255, 255, 0.08);
+}
+
+.theme-bento .t-display {
+  letter-spacing: -0.02em;
+}
+
+.theme-bento .t-panel {
+  background: var(--bt-panel-bg);
+  border-radius: 1.75rem;
+  box-shadow: 0 1px 2px var(--bt-ring), 0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--bt-ring);
+}
+
+.theme-bento .t-panel-sm {
+  background: var(--bt-panel-bg);
+  border-radius: 1rem;
+  border: 1px solid var(--bt-ring);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.theme-bento .t-panel-sm:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}

@@ -1,0 +1,70 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/cormorant/500.css';
+@import '@fontsource/cormorant/600.css';
+@import '@fontsource/karla/400.css';
+@import '@fontsource/karla/500.css';
+
+.theme-biophilic {
+  --t-bg: #eef2e6;
+  --t-ink: #2f3a26;
+  --t-ink-soft: #5c6b4d;
+  --t-accent: #6a8f3d;
+  --t-accent-2: #a9713f;
+  --t-display: 'Cormorant', serif;
+  --t-body: 'Karla', sans-serif;
+}
+
+.dark .theme-biophilic {
+  --t-bg: #1a2016;
+  --t-ink: #eaf1e0;
+  --t-ink-soft: #a9bb97;
+  --t-accent: #9cd469;
+  --t-accent-2: #d19a68;
+}
+
+.theme-biophilic .t-panel {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 30%, transparent);
+  border-radius: 2.5rem 1rem 2.5rem 1rem;
+  box-shadow: 0 12px 28px rgba(50, 60, 30, 0.1);
+}
+
+.theme-biophilic .t-panel-sm {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 35%, transparent);
+  border-radius: 1.5rem 0.5rem 1.5rem 0.5rem;
+}
+
+.theme-biophilic .bp-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.theme-biophilic .bp-blobs::before,
+.theme-biophilic .bp-blobs::after {
+  content: '';
+  position: absolute;
+  filter: blur(50px);
+  opacity: 0.3;
+}
+
+.theme-biophilic .bp-blobs::before {
+  width: 460px;
+  height: 380px;
+  top: -100px;
+  left: -80px;
+  background: var(--t-accent);
+  border-radius: 58% 42% 65% 35% / 45% 55% 45% 55%;
+}
+
+.theme-biophilic .bp-blobs::after {
+  width: 400px;
+  height: 340px;
+  bottom: -120px;
+  right: -60px;
+  background: var(--t-accent-2);
+  border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+}

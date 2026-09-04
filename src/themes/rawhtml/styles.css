@@ -1,0 +1,44 @@
+@import '../shared/kit-base.css';
+
+.theme-rawhtml {
+  --t-bg: #ffffff;
+  --t-ink: #000000;
+  --t-ink-soft: #333333;
+  --t-accent: #0000ee;
+  --t-display: Georgia, 'Times New Roman', Times, serif;
+  --t-body: Georgia, 'Times New Roman', Times, serif;
+}
+
+.dark .theme-rawhtml {
+  --t-bg: #000000;
+  --t-ink: #ffffff;
+  --t-ink-soft: #cccccc;
+  --t-accent: #66aaff;
+}
+
+.theme-rawhtml .t-display {
+  font-weight: 700;
+}
+
+.theme-rawhtml .t-panel {
+  background: var(--t-bg);
+  border: 1px solid var(--t-ink);
+  border-radius: 0;
+}
+
+.theme-rawhtml .t-panel-sm {
+  background: var(--t-bg);
+  border: 1px solid var(--t-ink);
+  border-radius: 0;
+}
+
+.theme-rawhtml a.t-accent-text,
+.theme-rawhtml .t-nav-link {
+  text-decoration: underline;
+}
+
+.theme-rawhtml .t-dot {
+  border-radius: 0;
+  width: 6px;
+  height: 6px;
+}

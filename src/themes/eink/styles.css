@@ -1,0 +1,42 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/literata/400.css';
+@import '@fontsource/literata/500.css';
+@import '@fontsource/literata/700.css';
+
+.theme-eink {
+  --t-bg: #f7f5f0;
+  --t-ink: #161513;
+  --t-ink-soft: #56534c;
+  --t-accent: #161513;
+  --t-display: 'Literata', serif;
+  --t-body: 'Literata', serif;
+}
+
+.dark .theme-eink {
+  --t-bg: #171613;
+  --t-ink: #f2efe6;
+  --t-ink-soft: #a7a296;
+  --t-accent: #f2efe6;
+}
+
+.theme-eink .t-panel {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 25%, transparent);
+  border-radius: 0.25rem;
+}
+
+.theme-eink .t-panel-sm {
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--t-ink) 35%, transparent);
+  border-radius: 0.25rem;
+}
+
+.theme-eink .t-accent-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.theme-eink .t-dot {
+  border-radius: 0;
+  transform: rotate(45deg);
+}
