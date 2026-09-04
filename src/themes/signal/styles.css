@@ -1,0 +1,93 @@
+@import '@fontsource/orbitron/400.css';
+@import '@fontsource/orbitron/500.css';
+@import '@fontsource/orbitron/600.css';
+@import '@fontsource/orbitron/700.css';
+@import '@fontsource/exo-2/400.css';
+@import '@fontsource/exo-2/500.css';
+@import '@fontsource/exo-2/600.css';
+
+.sg-root {
+  --sg-bg: #f0f9ff;
+  --sg-ink: #0b1622;
+  --sg-ink-soft: #47607a;
+  --sg-accent: #0369a1;
+  --sg-accent-2: #0891b2;
+  --sg-line: rgba(11, 22, 34, 0.14);
+  --sg-panel: rgba(11, 22, 34, 0.03);
+  --sg-display: 'Orbitron', sans-serif;
+  --sg-sans: 'Exo 2', sans-serif;
+  background: var(--sg-bg);
+  color: var(--sg-ink);
+  font-family: var(--sg-sans);
+  min-height: 100vh;
+}
+
+.dark .sg-root {
+  --sg-bg: #0b0d12;
+  --sg-ink: #f0f9ff;
+  --sg-ink-soft: #8ba3bd;
+  --sg-accent: #22d3ee;
+  --sg-accent-2: #38bdf8;
+  --sg-line: rgba(34, 211, 238, 0.22);
+  --sg-panel: rgba(34, 211, 238, 0.05);
+}
+
+.sg-display {
+  font-family: var(--sg-display);
+}
+
+.sg-panel {
+  background: var(--sg-panel);
+  border: 1px solid var(--sg-line);
+}
+
+.dark .sg-panel {
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.08) inset;
+}
+
+/* Corner HUD brackets — reused across sections for the "targeting frame" motif. */
+.sg-bracket {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: var(--sg-accent);
+  opacity: 0.5;
+}
+.sg-bracket.tl { top: 8px; left: 8px; border-top: 2px solid; border-left: 2px solid; }
+.sg-bracket.tr { top: 8px; right: 8px; border-top: 2px solid; border-right: 2px solid; }
+.sg-bracket.bl { bottom: 8px; left: 8px; border-bottom: 2px solid; border-left: 2px solid; }
+.sg-bracket.br { bottom: 8px; right: 8px; border-bottom: 2px solid; border-right: 2px solid; }
+
+@keyframes sg-scan {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.sg-scanline {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 120px;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--sg-accent) 10%, transparent),
+    transparent
+  );
+  animation: sg-scan 9s linear infinite;
+}
+
+@keyframes sg-pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 color-mix(in srgb, var(--sg-accent) 50%, transparent); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 4px transparent; }
+}
+
+.sg-pulse-dot {
+  animation: sg-pulse-dot 2s ease-in-out infinite;
+}

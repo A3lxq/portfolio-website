@@ -1,0 +1,65 @@
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
+@import '@fontsource/open-sans/400.css';
+@import '@fontsource/open-sans/500.css';
+@import '@fontsource/open-sans/600.css';
+
+.am-root {
+  --am-bg: #faf5ff;
+  --am-ink: #1e1b4b;
+  --am-ink-soft: #5b5770;
+  --am-accent: #7c3aed;
+  --am-accent-2: #0891b2;
+  --am-line: #e9def9;
+  --am-card: #ffffff;
+  --am-display: 'Outfit', sans-serif;
+  --am-sans: 'Open Sans', sans-serif;
+  --am-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: var(--am-bg);
+  color: var(--am-ink);
+  font-family: var(--am-sans);
+  min-height: 100vh;
+}
+
+.dark .am-root {
+  --am-bg: #140f28;
+  --am-ink: #f3f0ff;
+  --am-ink-soft: #a79fc9;
+  --am-accent: #a78bfa;
+  --am-accent-2: #22d3ee;
+  --am-line: #2c2350;
+  --am-card: #1c1638;
+}
+
+.am-display {
+  font-family: var(--am-display);
+}
+
+.am-card {
+  background: var(--am-card);
+  border: 1px solid var(--am-line);
+  border-radius: 1.5rem;
+}
+
+.am-bubble {
+  border-radius: 1.75rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+@keyframes am-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2%, -3%) scale(1.05); }
+}
+
+.am-blob {
+  position: fixed;
+  inset: -10%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 32% at 22% 24%, color-mix(in srgb, var(--am-accent) 16%, transparent), transparent 70%),
+    radial-gradient(32% 28% at 78% 68%, color-mix(in srgb, var(--am-accent-2) 14%, transparent), transparent 70%);
+  animation: am-drift 16s ease-in-out infinite;
+}

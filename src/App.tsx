@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 
-const THEME_ORDER = ['field-notes', 'declassified', 'cascade'] as const
+const THEME_ORDER = ['field-notes', 'declassified', 'cascade', 'signal', 'ambient'] as const
 type ThemeName = (typeof THEME_ORDER)[number]
 const STORAGE_KEY = 'site-theme-index'
 
@@ -8,6 +8,8 @@ const SITES: Record<ThemeName, ReturnType<typeof lazy>> = {
   'field-notes': lazy(() => import('./themes/field-notes/Site')),
   declassified: lazy(() => import('./themes/declassified/Site')),
   cascade: lazy(() => import('./themes/cascade/Site')),
+  signal: lazy(() => import('./themes/signal/Site')),
+  ambient: lazy(() => import('./themes/ambient/Site')),
 }
 
 /**

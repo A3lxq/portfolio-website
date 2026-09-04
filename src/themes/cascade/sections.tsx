@@ -27,7 +27,7 @@ function Field({
           <p className="cs-display text-xs uppercase tracking-[0.25em] text-[var(--cs-accent)]">
             {eyebrow}
           </p>
-          <h2 className="cs-display mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h2 id={`${id}-heading`} className="cs-display mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
             {title}
           </h2>
         </div>
