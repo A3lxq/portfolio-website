@@ -1,0 +1,115 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/bricolage-grotesque/500.css';
+@import '@fontsource/bricolage-grotesque/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+.theme-meshgradient {
+  --t-bg: #fbfaf8;
+  --t-ink: #1a1a22;
+  --t-ink-soft: #5c5c6b;
+  --t-accent: #ff6b6b;
+  --t-display: 'Bricolage Grotesque', sans-serif;
+  --t-body: 'Inter', sans-serif;
+}
+
+.dark .theme-meshgradient {
+  --t-bg: #0a0a0f;
+  --t-ink: #f5f4f8;
+  --t-ink-soft: #a6a3b8;
+  --t-accent: #ff8a8a;
+}
+
+.theme-meshgradient .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 82%, transparent);
+  border: 1px solid color-mix(in srgb, white 25%, transparent);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+.theme-meshgradient .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 75%, transparent);
+  border: 1px solid color-mix(in srgb, white 28%, transparent);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.theme-meshgradient .mg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--t-bg);
+  filter: hue-rotate(calc(var(--scroll-progress, 0) * 60deg));
+}
+
+.theme-meshgradient .mg-mesh span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  mix-blend-mode: multiply;
+}
+
+.dark .theme-meshgradient .mg-mesh span {
+  mix-blend-mode: screen;
+}
+
+.theme-meshgradient .mg-mesh span:nth-child(1) {
+  width: 42vw;
+  height: 42vw;
+  top: -10vw;
+  left: -6vw;
+  background: #ff6b6b;
+}
+
+.theme-meshgradient .mg-mesh span:nth-child(2) {
+  width: 38vw;
+  height: 38vw;
+  top: 5vw;
+  right: -8vw;
+  background: #4ecdc4;
+}
+
+.theme-meshgradient .mg-mesh span:nth-child(3) {
+  width: 36vw;
+  height: 36vw;
+  bottom: -8vw;
+  left: 18vw;
+  background: #ffd93d;
+}
+
+.theme-meshgradient .mg-mesh span:nth-child(4) {
+  width: 34vw;
+  height: 34vw;
+  bottom: 10vw;
+  right: 10vw;
+  background: #a78bfa;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-meshgradient .mg-mesh span {
+    animation: mg-warp 20s ease-in-out infinite alternate;
+  }
+  .theme-meshgradient .mg-mesh span:nth-child(2) {
+    animation-duration: 24s;
+    animation-delay: -6s;
+  }
+  .theme-meshgradient .mg-mesh span:nth-child(3) {
+    animation-duration: 26s;
+    animation-delay: -12s;
+  }
+  .theme-meshgradient .mg-mesh span:nth-child(4) {
+    animation-duration: 22s;
+    animation-delay: -18s;
+  }
+}
+
+@keyframes mg-warp {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(5vw, -4vw) scale(1.15); }
+}

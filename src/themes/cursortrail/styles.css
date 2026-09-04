@@ -1,0 +1,56 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/familjen-grotesk/500.css';
+@import '@fontsource/familjen-grotesk/700.css';
+@import '@fontsource/albert-sans/400.css';
+@import '@fontsource/albert-sans/500.css';
+
+.theme-cursortrail {
+  --t-bg: #fafafa;
+  --t-ink: #111111;
+  --t-ink-soft: #5c5c5c;
+  --t-accent: #ff4d6d;
+  --t-accent-2: #ffd23f;
+  --t-display: 'Familjen Grotesk', sans-serif;
+  --t-body: 'Albert Sans', sans-serif;
+}
+
+.dark .theme-cursortrail {
+  --t-bg: #0a0a0d;
+  --t-ink: #f5f5f5;
+  --t-ink-soft: #a3a3a3;
+  --t-accent: #ff7590;
+  --t-accent-2: #ffe066;
+}
+
+.theme-cursortrail .t-panel {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 12%, transparent);
+  border-radius: 1rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+}
+
+.theme-cursortrail .t-panel-sm {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 45%, transparent);
+  border-radius: 999px;
+}
+
+.theme-cursortrail .ct-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.theme-cursortrail .ct-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--ct-size, 10px);
+  height: var(--ct-size, 10px);
+  margin: calc(var(--ct-size, 10px) / -2);
+  border-radius: 50%;
+  background: var(--ct-color, var(--t-accent));
+  opacity: var(--ct-opacity, 0.8);
+  will-change: transform;
+}

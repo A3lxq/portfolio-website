@@ -1,0 +1,52 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/syne/600.css';
+@import '@fontsource/syne/700.css';
+@import '@fontsource/onest/400.css';
+@import '@fontsource/onest/500.css';
+
+.theme-motiondriven {
+  --t-bg: #ffffff;
+  --t-ink: #0a0a0a;
+  --t-ink-soft: #52525b;
+  --t-accent: #4f3ff0;
+  --t-accent-2: #00d4a0;
+  --t-display: 'Syne', sans-serif;
+  --t-body: 'Onest', sans-serif;
+}
+
+.dark .theme-motiondriven {
+  --t-bg: #08070f;
+  --t-ink: #f5f4ff;
+  --t-ink-soft: #a8a4c2;
+  --t-accent: #8677ff;
+  --t-accent-2: #34e8bb;
+}
+
+.theme-motiondriven .t-panel {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-ink) 10%, transparent);
+  border-radius: 1rem;
+  box-shadow: 0 12px 28px rgba(79, 63, 240, 0.1);
+}
+
+.theme-motiondriven .t-panel-sm {
+  background: color-mix(in srgb, var(--t-accent) 10%, var(--t-bg));
+  border: 1px solid color-mix(in srgb, var(--t-accent) 30%, transparent);
+  border-radius: 999px;
+}
+
+.theme-motiondriven .md-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 50;
+  background: color-mix(in srgb, var(--t-ink) 8%, transparent);
+}
+
+.theme-motiondriven .md-progress-bar {
+  height: 100%;
+  width: calc(var(--scroll-progress, 0) * 100%);
+  background: linear-gradient(90deg, var(--t-accent), var(--t-accent-2));
+}

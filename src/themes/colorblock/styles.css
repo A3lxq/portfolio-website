@@ -1,0 +1,89 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/staatliches/400.css';
+@import '@fontsource/work-sans/400.css';
+@import '@fontsource/work-sans/500.css';
+
+.theme-colorblock {
+  --t-bg: #fff5eb;
+  --t-ink: #231a12;
+  --t-ink-soft: #6b5844;
+  --t-accent: #ff6b35;
+  --t-display: 'Staatliches', sans-serif;
+  --t-body: 'Work Sans', sans-serif;
+}
+
+.dark .theme-colorblock {
+  --t-bg: #1c140c;
+  --t-ink: #fff2e4;
+  --t-ink-soft: #d8c2ac;
+  --t-accent: #ff9466;
+}
+
+.theme-colorblock .t-display {
+  letter-spacing: 0.02em;
+}
+
+.theme-colorblock .t-nav-wrap {
+  background: var(--t-bg);
+  border-bottom: 2px solid currentColor;
+}
+
+.theme-colorblock .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 85%, black 10%);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-colorblock .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 80%, black 12%);
+  border: 2px solid currentColor;
+  border-radius: 999px;
+}
+
+body:has(.theme-colorblock) {
+  scroll-snap-type: y proximity;
+}
+
+.theme-colorblock main > section {
+  scroll-snap-align: start;
+  scroll-margin-top: 88px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--t-bg);
+  color: var(--t-ink);
+  transition: none;
+}
+
+.theme-colorblock main > section:nth-of-type(4n + 1) {
+  --t-bg: #fff5eb;
+  --t-ink: #231a12;
+  --t-ink-soft: #6b5844;
+  --t-accent: #b34e18;
+}
+
+.theme-colorblock main > section:nth-of-type(4n + 2) {
+  --t-bg: #0f2b32;
+  --t-ink: #eafcff;
+  --t-ink-soft: #a9d9de;
+  --t-accent: #4fe0ff;
+}
+
+.theme-colorblock main > section:nth-of-type(4n + 3) {
+  --t-bg: #ffd93d;
+  --t-ink: #1c1400;
+  --t-ink-soft: #4d3f00;
+  --t-accent: #8a5a00;
+}
+
+.theme-colorblock main > section:nth-of-type(4n) {
+  --t-bg: #2b0a3d;
+  --t-ink: #f5e6ff;
+  --t-ink-soft: #c9a7e0;
+  --t-accent: #c77dff;
+}
+
+.dark .theme-colorblock main > section {
+  filter: brightness(0.82) saturate(1.05);
+}

@@ -1,0 +1,82 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/michroma/400.css';
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/600.css';
+
+.theme-hyperreal {
+  --t-bg: #f2f2f7;
+  --t-ink: #14141c;
+  --t-ink-soft: #5b5b6b;
+  --t-accent: #4a6cf7;
+  --t-accent-2: #00c2b8;
+  --t-display: 'Michroma', sans-serif;
+  --t-body: 'Barlow', sans-serif;
+}
+
+.dark .theme-hyperreal {
+  --t-bg: #07070c;
+  --t-ink: #f1f1f8;
+  --t-ink-soft: #9494a8;
+  --t-accent: #7d97ff;
+  --t-accent-2: #35e6da;
+}
+
+.theme-hyperreal .t-display {
+  letter-spacing: 0.04em;
+}
+
+.theme-hyperreal .t-panel {
+  background: var(--t-bg);
+  border: 1px solid color-mix(in srgb, var(--t-accent) 25%, transparent);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 40px rgba(20, 20, 40, 0.14), inset 0 1px 0 color-mix(in srgb, white 30%, transparent);
+}
+
+.theme-hyperreal .t-panel-sm {
+  background: color-mix(in srgb, var(--t-accent) 8%, var(--t-bg));
+  border: 1px solid color-mix(in srgb, var(--t-accent) 35%, transparent);
+  border-radius: 0.5rem;
+}
+
+.theme-hyperreal .hr-scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  perspective: 900px;
+}
+
+.theme-hyperreal .hr-shape {
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.theme-hyperreal .hr-shape--cube {
+  top: 14vh;
+  right: 10vw;
+  width: 120px;
+  height: 120px;
+  border: 2px solid color-mix(in srgb, var(--t-accent) 55%, transparent);
+  background: color-mix(in srgb, var(--t-accent) 12%, transparent);
+  border-radius: 0.5rem;
+}
+
+.theme-hyperreal .hr-shape--ring {
+  bottom: 12vh;
+  left: 8vw;
+  width: 160px;
+  height: 160px;
+  border: 18px solid color-mix(in srgb, var(--t-accent-2) 40%, transparent);
+  border-radius: 50%;
+}
+
+.theme-hyperreal .hr-shape--orb {
+  top: 48vh;
+  right: 20vw;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--t-accent) 70%, white 20%), color-mix(in srgb, var(--t-accent) 40%, transparent));
+}

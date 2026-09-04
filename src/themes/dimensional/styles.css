@@ -1,0 +1,86 @@
+@import '../shared/kit-base.css';
+@import '@fontsource/schibsted-grotesk/500.css';
+@import '@fontsource/schibsted-grotesk/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+.theme-dimensional {
+  --t-bg: #f2f4fa;
+  --t-ink: #12141f;
+  --t-ink-soft: #565b72;
+  --t-accent: #5b7fff;
+  --t-accent-2: #ff7a9e;
+  --t-accent-3: #38d9c4;
+  --t-display: 'Schibsted Grotesk', sans-serif;
+  --t-body: 'Inter', sans-serif;
+}
+
+.dark .theme-dimensional {
+  --t-bg: #0c0e16;
+  --t-ink: #eef0fb;
+  --t-ink-soft: #9498b5;
+  --t-accent: #7b98ff;
+  --t-accent-2: #ff93b1;
+  --t-accent-3: #57e6d1;
+}
+
+.theme-dimensional .t-panel {
+  background: color-mix(in srgb, var(--t-bg) 65%, transparent);
+  border: 1px solid color-mix(in srgb, white 20%, transparent);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 24px 48px rgba(20, 20, 40, 0.12);
+}
+
+.theme-dimensional .t-panel-sm {
+  background: color-mix(in srgb, var(--t-bg) 55%, transparent);
+  border: 1px solid color-mix(in srgb, white 22%, transparent);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.theme-dimensional .dm-depth {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.theme-dimensional .dm-depth span {
+  position: absolute;
+  border-radius: 40%;
+  will-change: transform;
+}
+
+.theme-dimensional .dm-depth span:nth-child(1) {
+  width: 30vw;
+  height: 30vw;
+  top: 5vh;
+  left: 8vw;
+  background: color-mix(in srgb, var(--t-accent) 35%, transparent);
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+.theme-dimensional .dm-depth span:nth-child(2) {
+  width: 22vw;
+  height: 22vw;
+  top: 45vh;
+  right: 12vw;
+  background: color-mix(in srgb, var(--t-accent-2) 32%, transparent);
+  filter: blur(24px);
+  opacity: 0.45;
+}
+
+.theme-dimensional .dm-depth span:nth-child(3) {
+  width: 26vw;
+  height: 26vw;
+  bottom: 5vh;
+  left: 30vw;
+  background: color-mix(in srgb, var(--t-accent-3) 30%, transparent);
+  filter: blur(42px);
+  opacity: 0.4;
+}

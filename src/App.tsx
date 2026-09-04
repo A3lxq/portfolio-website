@@ -38,6 +38,13 @@ const THEME_ORDER = [
   'magazine',
   'materialyou',
   'fluent',
+  'motiondriven',
+  'dimensional',
+  'hyperreal',
+  'cursortrail',
+  'meshgradient',
+  'colorblock',
+  'starfield',
 ] as const
 type ThemeName = (typeof THEME_ORDER)[number]
 const STORAGE_KEY = 'site-theme-index'
@@ -80,6 +87,13 @@ const SITES: Record<ThemeName, ReturnType<typeof lazy>> = {
   magazine: lazy(() => import('./themes/magazine/Site')),
   materialyou: lazy(() => import('./themes/materialyou/Site')),
   fluent: lazy(() => import('./themes/fluent/Site')),
+  motiondriven: lazy(() => import('./themes/motiondriven/Site')),
+  dimensional: lazy(() => import('./themes/dimensional/Site')),
+  hyperreal: lazy(() => import('./themes/hyperreal/Site')),
+  cursortrail: lazy(() => import('./themes/cursortrail/Site')),
+  meshgradient: lazy(() => import('./themes/meshgradient/Site')),
+  colorblock: lazy(() => import('./themes/colorblock/Site')),
+  starfield: lazy(() => import('./themes/starfield/Site')),
 }
 
 /**
