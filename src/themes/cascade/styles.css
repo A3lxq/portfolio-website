@@ -58,6 +58,7 @@
   filter: grayscale(1) contrast(1.1);
   mix-blend-mode: multiply;
   opacity: 0.5;
+  transform: scale(calc(1 + var(--scroll-progress, 0) * 0.15)) rotate(calc(var(--scroll-progress, 0) * 4deg));
 }
 
 .dark .cs-photo-mesh {

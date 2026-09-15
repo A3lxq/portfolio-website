@@ -61,7 +61,7 @@
   bottom: -35vw;
   width: 90vw;
   height: 90vw;
-  transform: translateX(-50%);
+  transform: translateX(-50%) rotate(calc(var(--scroll-progress, 0) * 45deg));
   border-radius: 50%;
   background: repeating-conic-gradient(
     var(--t-accent) 0deg 6deg,

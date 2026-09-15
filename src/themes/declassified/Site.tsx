@@ -1,6 +1,7 @@
 import './styles.css'
 import { Nav } from './Nav'
 import { Footer } from './Footer'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 import {
   About,
   Certifications,
@@ -13,9 +14,10 @@ import {
 } from './sections'
 
 export default function Site() {
+  const scrollRef = useScrollProgress<HTMLDivElement>()
   return (
     <div className="dc-root min-h-screen">
-      <div aria-hidden="true" className="dc-photo-grid" />
+      <div ref={scrollRef} aria-hidden="true" className="dc-photo-grid" />
       <a
         href="#main"
         className="dc-mono sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:border-2 focus:border-[var(--dc-line)] focus:bg-[var(--dc-bg)] focus:px-4 focus:py-2 focus:text-xs focus:uppercase"

@@ -1,6 +1,7 @@
 import { useState, type FormEvent, type PropsWithChildren } from 'react'
 import { useRevealOnScroll, useStaggerReveal } from '../../hooks/useScrollReveal'
 import { usePointerTracking } from '../../hooks/usePointerTracking'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 import {
   certifications,
   education,
@@ -39,9 +40,10 @@ function Field({
 export function Hero() {
   const ref = useStaggerReveal<HTMLDivElement>({ y: 18, scale: 0.98, duration: 0.4, stagger: 0.09 })
   const pointerRef = usePointerTracking<HTMLElement>()
+  const scrollRef = useScrollProgress<HTMLDivElement>()
   return (
     <section ref={pointerRef} id="top" aria-label="Introduction" className="relative overflow-hidden">
-      <div aria-hidden="true" className="am-blob" />
+      <div ref={scrollRef} aria-hidden="true" className="am-blob" />
       <div ref={ref} className="relative z-[1] mx-auto max-w-3xl px-6 pb-20 pt-24 md:pt-32">
         <div className="am-card am-bubble p-8 shadow-sm sm:p-10">
           <p className="inline-flex items-center gap-2 rounded-full bg-[var(--am-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--am-accent)]">

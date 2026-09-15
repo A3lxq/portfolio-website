@@ -58,6 +58,7 @@
   left: -80px;
   background: var(--t-accent);
   border-radius: 58% 42% 65% 35% / 45% 55% 45% 55%;
+  transform: translateY(calc(var(--scroll-progress, 0) * 130px)) rotate(calc(var(--scroll-progress, 0) * 20deg));
 }
 
 .theme-biophilic .bp-blobs::after {
@@ -67,4 +68,5 @@
   right: -60px;
   background: var(--t-accent-2);
   border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+  transform: translateY(calc(var(--scroll-progress, 0) * -110px)) rotate(calc(var(--scroll-progress, 0) * -18deg));
 }

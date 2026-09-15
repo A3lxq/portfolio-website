@@ -1,14 +1,20 @@
 import './styles.css'
 import { buildThemeSite } from '../shared/ThemeKit'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 
-const Site = buildThemeSite({
-  themeClass: 'theme-gooey',
-  background: (
-    <div className="go-blobs" aria-hidden="true">
+function Background() {
+  const ref = useScrollProgress<HTMLDivElement>()
+  return (
+    <div ref={ref} className="go-blobs" aria-hidden="true">
       <span />
       <span />
     </div>
-  ),
+  )
+}
+
+const Site = buildThemeSite({
+  themeClass: 'theme-gooey',
+  background: <Background />,
   eyebrow: 'Open to opportunities',
 })
 

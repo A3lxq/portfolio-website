@@ -107,6 +107,7 @@
   filter: grayscale(1) contrast(1.15);
   mix-blend-mode: multiply;
   opacity: 0.14;
+  transform: scale(calc(1 + var(--scroll-progress, 0) * 0.18));
 }
 
 .dark .dc-photo-grid {

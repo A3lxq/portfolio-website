@@ -65,13 +65,13 @@
 .theme-maximalism .mx-stickers span:nth-child(1) {
   top: 10vh;
   right: 8vw;
-  transform: rotate(8deg);
+  transform: rotate(calc(8deg + var(--scroll-progress, 0) * 220deg)) translateY(calc(var(--scroll-progress, 0) * 100px));
   background: var(--t-accent);
 }
 
 .theme-maximalism .mx-stickers span:nth-child(2) {
   bottom: 14vh;
   left: 6vw;
-  transform: rotate(-10deg);
+  transform: rotate(calc(-10deg - var(--scroll-progress, 0) * 200deg)) translateY(calc(var(--scroll-progress, 0) * -90px));
   background: var(--t-accent-3);
 }

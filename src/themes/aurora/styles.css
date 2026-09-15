@@ -50,6 +50,17 @@
   background: var(--t-bg);
 }
 
+.theme-aurora .au-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: calc(0.35 + var(--scroll-progress, 0) * 0.35);
+  filter: saturate(1.3) brightness(0.8);
+  mix-blend-mode: screen;
+}
+
 .theme-aurora .au-sky span {
   position: absolute;
   border-radius: 50%;

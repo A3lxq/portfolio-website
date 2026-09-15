@@ -65,7 +65,7 @@
   width: 90px;
   height: 90px;
   background: var(--t-accent);
-  transform: rotate(12deg);
+  transform: rotate(calc(12deg + var(--scroll-progress, 0) * 160deg)) translateY(calc(var(--scroll-progress, 0) * 80px));
 }
 
 .theme-neubrutalism .nb-block--2 {
@@ -75,4 +75,5 @@
   height: 70px;
   background: var(--t-accent-2);
   border-radius: 50%;
+  transform: translateY(calc(var(--scroll-progress, 0) * -100px));
 }

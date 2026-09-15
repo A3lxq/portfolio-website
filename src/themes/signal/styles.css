@@ -81,6 +81,7 @@
     transparent
   );
   animation: sg-scan 9s linear infinite;
+  filter: hue-rotate(calc(var(--scroll-progress, 0) * 50deg)) brightness(calc(1 + var(--scroll-progress, 0) * 0.8));
 }
 
 @keyframes sg-pulse-dot {

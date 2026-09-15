@@ -44,6 +44,16 @@
   overflow: hidden;
 }
 
+.theme-liquidglass .lg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: calc(0.55 + var(--scroll-progress, 0) * 0.25);
+  filter: saturate(1.2);
+}
+
 .theme-liquidglass .lg-glow span {
   position: absolute;
   border-radius: 50%;

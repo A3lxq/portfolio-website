@@ -75,6 +75,7 @@
   top: -120px;
   right: -80px;
   background: var(--t-accent);
+  transform: translateY(calc(var(--scroll-progress, 0) * 140px)) scale(calc(1 + var(--scroll-progress, 0) * 0.3));
 }
 
 .theme-claymorphism .cm-blob::after {
@@ -83,4 +84,5 @@
   bottom: -140px;
   left: -100px;
   background: var(--t-accent-2);
+  transform: translateY(calc(var(--scroll-progress, 0) * -120px)) scale(calc(1 + var(--scroll-progress, 0) * 0.22));
 }

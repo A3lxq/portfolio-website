@@ -57,6 +57,7 @@
   height: 40px;
   background: var(--t-accent);
   border-radius: 50%;
+  transform: translateY(calc(var(--scroll-progress, 0) * 160px));
 }
 
 .theme-memphis .mm-shapes span:nth-child(2) {
@@ -67,6 +68,7 @@
   border-left: 26px solid transparent;
   border-right: 26px solid transparent;
   border-bottom: 44px solid var(--t-accent-2);
+  transform: rotate(calc(var(--scroll-progress, 0) * 200deg)) translateY(calc(var(--scroll-progress, 0) * -100px));
 }
 
 .theme-memphis .mm-shapes span:nth-child(3) {
@@ -75,8 +77,8 @@
   width: 60px;
   height: 14px;
   background: var(--t-accent-3);
-  transform: rotate(-8deg);
   border-radius: 999px;
+  transform: rotate(calc(-8deg + var(--scroll-progress, 0) * 120deg)) translateX(calc(var(--scroll-progress, 0) * 80px));
 }
 
 .theme-memphis .mm-shapes span:nth-child(4) {
@@ -86,4 +88,5 @@
   height: 34px;
   border: 5px solid var(--t-ink);
   border-radius: 50%;
+  transform: translateY(calc(var(--scroll-progress, 0) * -140px)) scale(calc(1 + var(--scroll-progress, 0) * 0.6));
 }

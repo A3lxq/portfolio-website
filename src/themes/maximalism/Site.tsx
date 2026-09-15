@@ -1,14 +1,20 @@
 import './styles.css'
 import { buildThemeSite } from '../shared/ThemeKit'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 
-const Site = buildThemeSite({
-  themeClass: 'theme-maximalism',
-  background: (
-    <div className="mx-stickers" aria-hidden="true">
+function Background() {
+  const ref = useScrollProgress<HTMLDivElement>()
+  return (
+    <div ref={ref} className="mx-stickers" aria-hidden="true">
       <span>NEW!</span>
       <span>WOW</span>
     </div>
-  ),
+  )
+}
+
+const Site = buildThemeSite({
+  themeClass: 'theme-maximalism',
+  background: <Background />,
   eyebrow: 'Open to opportunities',
 })
 

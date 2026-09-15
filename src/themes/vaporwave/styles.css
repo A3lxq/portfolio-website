@@ -42,7 +42,16 @@
   pointer-events: none;
   overflow: hidden;
   background: linear-gradient(180deg, var(--t-accent-2) 0%, var(--t-accent) 55%, var(--t-bg) 100%);
-  opacity: 0.28;
+}
+
+.theme-vaporwave .vw-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: calc(0.55 + var(--scroll-progress, 0) * 0.25);
+  filter: saturate(1.3);
 }
 
 .theme-vaporwave .vw-sky::after {

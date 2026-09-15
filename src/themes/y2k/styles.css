@@ -58,6 +58,6 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 20% -10%, color-mix(in srgb, var(--t-accent) 20%, transparent), transparent 45%),
-    radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--t-accent) 14%, transparent), transparent 45%);
+  background: radial-gradient(circle at 20% calc(-10% + var(--scroll-progress, 0) * 50%), color-mix(in srgb, var(--t-accent) 20%, transparent), transparent 45%),
+    radial-gradient(circle at 90% calc(10% - var(--scroll-progress, 0) * 40%), color-mix(in srgb, var(--t-accent) 14%, transparent), transparent 45%);
 }

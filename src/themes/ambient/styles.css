@@ -62,4 +62,5 @@
     radial-gradient(38% 32% at 22% 24%, color-mix(in srgb, var(--am-accent) 16%, transparent), transparent 70%),
     radial-gradient(32% 28% at 78% 68%, color-mix(in srgb, var(--am-accent-2) 14%, transparent), transparent 70%);
   animation: am-drift 16s ease-in-out infinite;
+  filter: hue-rotate(calc(var(--scroll-progress, 0) * 70deg)) saturate(calc(1 + var(--scroll-progress, 0) * 0.6));
 }

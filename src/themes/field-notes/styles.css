@@ -69,6 +69,7 @@
   background-image: url('./assets/paper-grain.webp');
   background-repeat: repeat;
   background-size: 340px;
+  background-position: 0 calc(var(--scroll-progress, 0) * -220px);
   filter: grayscale(1) contrast(1.05);
   mix-blend-mode: multiply;
   opacity: 0.16;

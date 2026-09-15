@@ -59,15 +59,5 @@
   font-size: 14vw;
   text-transform: uppercase;
   padding-right: 4rem;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .theme-kinetic .kn-marquee span {
-    animation: kn-scroll 22s linear infinite;
-  }
-}
-
-@keyframes kn-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  transform: translateX(calc(var(--scroll-progress, 0) * -60%));
 }
